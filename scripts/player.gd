@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # Movement
-@export var move_speed: float = 5.0
+@export var move_speed: float = 6.0
 
 # Shooting
 @export var bullet_scene: PackedScene
