@@ -69,7 +69,9 @@ func handle_aim() -> void:
 			rotation.y = atan2(aim_direction.x, aim_direction.z)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot") and is_aiming:
+	print("Input received: ", event)
+	if event.is_action_pressed("shoot"):
+		print("Shoot action detected!")
 		shoot()
 
 func shoot() -> void:
