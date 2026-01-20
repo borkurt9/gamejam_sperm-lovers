@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc3nrto6h6374"]
+[gd_scene load_steps=7 format=3 uid="uid://dc3nrto6h6374"]
 
 [ext_resource type="PackedScene" uid="uid://qxin0n6vbcb7" path="res://scenes/player/player.tscn" id="1_jbqir"]
 [ext_resource type="Script" uid="uid://c2xaendkngky8" path="res://scripts/camera_follow.gd" id="2_yautc"]
+[ext_resource type="PackedScene" uid="uid://dpumo2pm1yuxh" path="res://art/glbtf/SpermPlayer.glb" id="3_sperm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbqir"]
 albedo_color = Color(1, 0.7529412, 0.79607844, 1)
@@ -36,3 +37,6 @@ mesh = SubResource("PlaneMesh_yautc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_fr1um")
+
+[node name="SpermPlayer" parent="." instance=ExtResource("3_sperm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.8223057, 1.0749278, 4.0396748)
