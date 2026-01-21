@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://biu75gral8yj4"]
+
+[ext_resource type="Texture2D" uid="uid://1cearpjsie0n" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_40.png" id="1_64qe8"]
+[ext_resource type="Texture2D" uid="uid://bbyk0wycr0sy" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_41.png" id="2_0lmd0"]
+
+[resource]
+resource_name = "T_Steak_Cooked"
+albedo_texture = ExtResource("1_64qe8")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_0lmd0")
+uv1_scale = Vector3(1, -1, 1)

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c1ac34nuo00k4"]
+
+[ext_resource type="Texture2D" uid="uid://d13cj3vgxywt3" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_10.png" id="1_atgfk"]
+[ext_resource type="Texture2D" uid="uid://u3stfxl8e7r2" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_11.png" id="2_80tm7"]
+
+[resource]
+resource_name = "T_Bacon_Cooked"
+albedo_texture = ExtResource("1_atgfk")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_80tm7")
+uv1_scale = Vector3(1, -1, 1)

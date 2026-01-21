@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bfxn8kjtrmbk8"]
+
+[ext_resource type="Texture2D" uid="uid://cm0lj5qnvm483" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_22.png" id="1_ptmbn"]
+[ext_resource type="Texture2D" uid="uid://421tqurwlmi1" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_23.png" id="2_slyrl"]
+
+[resource]
+resource_name = "T_Bread_Sliced"
+albedo_texture = ExtResource("1_ptmbn")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_slyrl")
+uv1_scale = Vector3(1, -1, 1)

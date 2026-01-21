@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://lej8g8twwh54"]
+
+[ext_resource type="Texture2D" uid="uid://d2t6bu1d6btr1" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_65.png" id="1_3hnda"]
+[ext_resource type="Texture2D" uid="uid://cpt6pjbpm338y" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_66.png" id="2_3tosp"]
+
+[resource]
+resource_name = "T_Tomato"
+albedo_texture = ExtResource("1_3hnda")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_3tosp")
+uv1_scale = Vector3(1, -1, 1)

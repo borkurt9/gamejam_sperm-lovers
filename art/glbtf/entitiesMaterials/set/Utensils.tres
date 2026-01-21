@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c5wrd1f3mys4h"]
+
+[ext_resource type="Texture2D" uid="uid://bkmkmxskno01b" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_12.png" id="1_nbt1k"]
+
+[resource]
+resource_name = "Utensils"
+cull_mode = 2
+albedo_texture = ExtResource("1_nbt1k")
+roughness = 0.5

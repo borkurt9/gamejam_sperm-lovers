@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bj6ltrchjwyre"]
+
+[ext_resource type="Texture2D" uid="uid://cgyd6gggx73gn" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_52.png" id="1_41pjl"]
+[ext_resource type="Texture2D" uid="uid://dbcipvinqwjx2" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_53.png" id="2_s6g8x"]
+[ext_resource type="Texture2D" uid="uid://bjhkjmch2kn6l" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_54.png" id="3_0ummc"]
+
+[resource]
+resource_name = "T_Potato"
+albedo_texture = ExtResource("1_41pjl")
+metallic_texture = ExtResource("2_s6g8x")
+metallic_texture_channel = 2
+roughness = 0.5
+roughness_texture = ExtResource("2_s6g8x")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_0ummc")
+ao_enabled = true
+ao_texture = ExtResource("2_s6g8x")
+uv1_scale = Vector3(1, -1, 1)
