@@ -13,7 +13,7 @@ func _ready() -> void:
 	pick_new_wander_target()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Move toward wander target
 	var direction = (wander_target - global_position).normalized()
 	direction.y = 0

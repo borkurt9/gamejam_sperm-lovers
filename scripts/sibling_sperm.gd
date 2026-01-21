@@ -14,7 +14,7 @@ func _ready() -> void:
 	print("Sibling spawned onaa layers: ", collision_layer, " groups: ", get_groups())
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Move toward wander target
 	var direction = (wander_target - global_position).normalized()
 	direction.y = 0

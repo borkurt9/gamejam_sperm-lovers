@@ -23,7 +23,7 @@ var is_aiming := false
 var can_shoot := true
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	handle_movement()
 	handle_aim()
 	move_and_slide()
