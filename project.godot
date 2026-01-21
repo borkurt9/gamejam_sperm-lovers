@@ -29,6 +29,7 @@ enabled=PackedStringArray("res://addons/TileMapLayer3D/plugin.cfg")
 [global_group]
 
 walls="walls mesh"
+player=""
 
 [input]
 

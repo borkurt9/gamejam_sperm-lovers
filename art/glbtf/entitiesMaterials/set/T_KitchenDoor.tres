@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://d2lkl6ecswtus"]
+
+[ext_resource type="Texture2D" uid="uid://bf8ed63tmevey" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_44.png" id="1_5ooos"]
+[ext_resource type="Texture2D" uid="uid://bp6scop6a2hrr" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_45.png" id="2_46e4m"]
+
+[resource]
+resource_name = "T_KitchenDoor"
+albedo_texture = ExtResource("1_5ooos")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_46e4m")
+uv1_scale = Vector3(1, -1, 1)

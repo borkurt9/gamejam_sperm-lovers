@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c1umeqn48dhuo"]
+
+[ext_resource type="Texture2D" uid="uid://bpfqfgbeoehd2" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_38.png" id="1_tmpia"]
+[ext_resource type="Texture2D" uid="uid://dhakcwjop8txw" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_14.png" id="2_nxerl"]
+
+[resource]
+resource_name = "T_EntranceDoorStand"
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_texture = ExtResource("1_tmpia")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_tmpia")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_nxerl")

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cngypntimec8j"]
+
+[ext_resource type="Texture2D" uid="uid://c5yqlx81bwr4v" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_13.png" id="1_j48bf"]
+[ext_resource type="Texture2D" uid="uid://dhakcwjop8txw" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_14.png" id="2_yreyr"]
+
+[resource]
+resource_name = "T_Blender"
+albedo_texture = ExtResource("1_j48bf")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_yreyr")
+uv1_scale = Vector3(1, -1, 1)

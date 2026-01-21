@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://drtlkfeqenkkb"]
+
+[ext_resource type="Texture2D" uid="uid://cnere5u87xpdu" path="res://art/glbtf/designsGlb/texture/low_poly_psx_style_restaurant_props_asset_pack_59.png" id="1_4halc"]
+
+[resource]
+resource_name = "Signs"
+cull_mode = 2
+albedo_texture = ExtResource("1_4halc")
+roughness = 0.5
+uv1_scale = Vector3(1, -1, 1)

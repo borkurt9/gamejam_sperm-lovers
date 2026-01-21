@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7m7t0ncabnmd"]
+
+[ext_resource type="Texture2D" uid="uid://d0gai5iycanpq" path="res://art/glbtf/entitiesMaterials/spermPlayer/SpermPlayer_Tail_tex.png" id="1_j1kc3"]
+
+[resource]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_j1kc3")
+roughness = 0.5
