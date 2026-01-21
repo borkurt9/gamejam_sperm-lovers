@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://l2cwtedexpk8" path="res://scripts/bullet.gd" id="1_2as5g"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kel6l"]
-radius = 0.1
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2as5g"]
+radius = 0.12597656
+height = 1.823
 
 [sub_resource type="SphereMesh" id="SphereMesh_2as5g"]
 radius = 0.1
@@ -15,7 +16,8 @@ collision_mask = 2
 script = ExtResource("1_2as5g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_kel6l")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0067749023, 0)
+shape = SubResource("CapsuleShape3D_2as5g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_2as5g")

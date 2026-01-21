@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var move_speed: float = 1.5
-@export var wander_range: float = 4.0
+@export var wander_range: float = 3.0
 
 var wander_target: Vector3
 var home_position: Vector3
@@ -37,7 +37,6 @@ func pick_new_wander_target() -> void:
 		randf_range(-wander_range, wander_range)
 	)
 	wander_target = home_position + random_offset
-
 
 func take_damage() -> void:
 	queue_free()

@@ -16,10 +16,6 @@ pellet_count = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_dovo2")
 
-[node name="ShootingPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 2)
-visible = false
-
 [node name="SpermPlayer" parent="." instance=ExtResource("2_dovo2")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 0, 0.14251202)
 rotation_order = 0
@@ -27,3 +23,7 @@ rotation_order = 0
 [node name="Gun" parent="." instance=ExtResource("3_gmlin")]
 transform = Transform3D(2.9671566, -0.05188128, -0.47249177, 0, 4.5686803, -0.15564907, 0.56065005, 0.2745739, 2.500592, 0.30225283, 0.67845654, 0.40896508)
 script = ExtResource("4_lvxji")
+
+[node name="ShootingPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 2)
+visible = false

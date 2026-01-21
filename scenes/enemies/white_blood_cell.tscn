@@ -1,17 +1,16 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://bj7gawixh3dxo"]
 
-[ext_resource type="Script" path="res://scripts/white_blood_cell.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://art/glbtf/Wcell.glb" id="2_model"]
+[ext_resource type="Script" uid="uid://d2jg3jdejd1ov" path="res://scripts/white_blood_cell.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://d2j3owkmbdrq1" path="res://art/glbtf/Wcell.glb" id="2_model"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wbc"]
-radius = 0.5
 
 [node name="WhiteBloodCell" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_script")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_wbc")
 
 [node name="Wcell" parent="." instance=ExtResource("2_model")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

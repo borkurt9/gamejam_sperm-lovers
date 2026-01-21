@@ -1,7 +1,7 @@
 extends Area3D
 
-@export var speed: float = 20.0
-@export var lifetime: float = 2.0
+@export var speed: float = 50.0
+@export var lifetime: float = 0.1
 
 var direction := Vector3.FORWARD
 
@@ -15,6 +15,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	print("Bullet hit: ", body.name, " Groups: ", body.get_groups())
+	
 	if body.is_in_group("enemies"):
 		body.take_damage()
+	
+	if body.is_in_group("enemies") or body.is_in_group("walls"):
 		queue_free()

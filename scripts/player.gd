@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 # Movement
 @export var move_speed: float = 6.0
+@export var aim_move_speed_multiplier: float = 0.5 # divison slow
 
 # Shooting
 @export var bullet_scene: PackedScene
@@ -23,11 +24,14 @@ var is_aiming := false
 var can_shoot := true
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	handle_aiming_input()
 	handle_movement()
 	handle_aim()
 	move_and_slide()
 
+func handle_aiming_input() -> void:
+	is_aiming = Input.is_action_pressed("aim")
 
 func handle_movement() -> void:
 	var input_dir := Vector3.ZERO
@@ -42,9 +46,9 @@ func handle_movement() -> void:
 		input_dir += iso_right
 	
 	input_dir = input_dir.normalized()
-	velocity.x = input_dir.x * move_speed
-	velocity.z = input_dir.z * move_speed
-
+	var current_speed = (move_speed * aim_move_speed_multiplier) if is_aiming else move_speed
+	velocity.x = input_dir.x * current_speed
+	velocity.z = input_dir.z * current_speed
 
 func handle_aim() -> void:
 	var camera := get_viewport().get_camera_3d()
@@ -68,9 +72,8 @@ func handle_aim() -> void:
 
 func _input(event: InputEvent) -> void:
 	# Left click to shoot
-	if event.is_action_pressed("shoot") and can_shoot:
+	if event.is_action_pressed("shoot") and can_shoot and is_aiming:
 		shoot()
-
 
 func shoot() -> void:
 	if bullet_scene == null:
@@ -97,7 +100,6 @@ func shoot() -> void:
 	
 	# Cooldown timer
 	get_tree().create_timer(shot_cooldown).timeout.connect(_reset_shoot)
-
 
 func _reset_shoot() -> void:
 	can_shoot = true

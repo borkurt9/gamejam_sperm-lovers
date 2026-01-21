@@ -8,18 +8,16 @@ var idle_rotation := Vector3(3.5, -10.7, 0.0)
 @export var aim_speed := 15.0
 
 # Recoil settings
-@export var recoil_kickback := 0.15
-@export var recoil_rotation := 20.0  # degrees
+@export var recoil_kickback := 0.10
+@export var recoil_rotation := 50.0  # degrees
 var recoil_offset := 0.0
 var recoil_rot_offset := 0.0
 
 @onready var player: CharacterBody3D = get_parent()
 
-
 func _ready() -> void:
 	position = idle_position
 	rotation_degrees = idle_rotation
-
 
 func _process(delta: float) -> void:
 	var target_pos := aim_position if (player and player.is_aiming) else idle_position
@@ -35,7 +33,6 @@ func _process(delta: float) -> void:
 	# Decay recoil
 	recoil_offset = lerpf(recoil_offset, 0.0, 10.0 * delta)
 	recoil_rot_offset = lerpf(recoil_rot_offset, 0.0, 10.0 * delta)
-
 
 func recoil() -> void:
 	recoil_offset = recoil_kickback
