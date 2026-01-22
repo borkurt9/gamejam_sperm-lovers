@@ -5,11 +5,16 @@ extends CharacterBody3D
 @export var health: int = 2
 @export var chase_speed: float = 3.0
 @export var aggro_alert_range: float = 5.0
+@export var attack_damage: int = 1
+@export var attack_cooldown: float = 0.5
 
 var wander_target: Vector3
 var home_position: Vector3
 var is_aggro: bool = false
 var target: Node3D = null
+var can_attack: bool = true
+
+@onready var attack_hitbox: Area3D = $AttackHitbox
 
 
 func _ready() -> void:
@@ -17,6 +22,10 @@ func _ready() -> void:
 	add_to_group("enemies")
 	pick_new_wander_target()
 	print("Sibling spawned onaa layers: ", collision_layer, " groups: ", get_groups())
+
+	# Connect attack hitbox signal
+	if attack_hitbox:
+		attack_hitbox.body_entered.connect(_on_attack_hitbox_body_entered)
 
 
 func _physics_process(_delta: float) -> void:
@@ -80,3 +89,20 @@ func alert_nearby_siblings(aggro_target: Node3D) -> void:
 			continue
 		if global_position.distance_to(sibling.global_position) <= aggro_alert_range:
 			sibling.become_aggro(aggro_target)
+
+
+func _on_attack_hitbox_body_entered(body: Node3D) -> void:
+	if not can_attack:
+		return
+	if not body.is_in_group("player"):
+		return
+	if not body.has_method("take_damage"):
+		return
+
+	body.take_damage(attack_damage, global_position)
+	can_attack = false
+	get_tree().create_timer(attack_cooldown).timeout.connect(_reset_attack)
+
+
+func _reset_attack() -> void:
+	can_attack = true
