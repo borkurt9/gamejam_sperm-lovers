@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qxin0n6vbcb7"]
+[gd_scene load_steps=10 format=3 uid="uid://qxin0n6vbcb7"]
 
 [ext_resource type="Script" uid="uid://dlbvddyy2ax2w" path="res://scripts/player.gd" id="1_8afob"]
 [ext_resource type="PackedScene" uid="uid://dpumo2pm1yuxh" path="res://art/glbtf/SpermPlayer.glb" id="2_dovo2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ofmfucyb25p" path="res://scenes/player/bullet.tscn" id="5_bullet"]
 [ext_resource type="AudioStream" uid="uid://bsspty2p6tihl" path="res://sounds/shotgun-146188.mp3" id="6_0owmy"]
 [ext_resource type="AudioStream" uid="uid://ldxenlh5k7yv" path="res://sounds/shotgun-reload.wav" id="7_0owmy"]
+[ext_resource type="PackedScene" uid="uid://chpbar3dscene" path="res://scenes/ui/hp_bar_3d.tscn" id="8_hpbar"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dovo2"]
 
@@ -34,3 +35,8 @@ stream = ExtResource("6_0owmy")
 
 [node name="ReloadSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_0owmy")
+
+[node name="HPBar" parent="." instance=ExtResource("8_hpbar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+bar_color = Color(0.2, 0.8, 0.2, 1)
+always_visible = true

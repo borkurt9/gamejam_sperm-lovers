@@ -19,6 +19,7 @@ extends CharacterBody3D
 @onready var gun: Node3D = $Gun
 @onready var shoot_sound: AudioStreamPlayer3D = $ShootSound
 @onready var reload_sound: AudioStreamPlayer3D = $ReloadSound
+@onready var hp_bar: Node3D = $HPBar
 
 # Isometric direction conversion
 var iso_forward := Vector3(-1, 0, -1).normalized()
@@ -38,7 +39,9 @@ var knockback_velocity := Vector3.ZERO
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	health = max_health
-	add_to_group("player")  
+	add_to_group("player")
+	if hp_bar:
+		hp_bar.update_health(health, max_health)  
 
 func _physics_process(delta: float) -> void:
 	handle_aiming_input()
@@ -147,6 +150,9 @@ func take_damage(amount: int, attacker_position: Vector3) -> void:
 
 	health -= amount
 	print("Player took ", amount, " damage! Health: ", health)
+
+	if hp_bar:
+		hp_bar.update_health(health, max_health)
 
 	# Apply knockback away from attacker
 	var knockback_dir = (global_position - attacker_position).normalized()

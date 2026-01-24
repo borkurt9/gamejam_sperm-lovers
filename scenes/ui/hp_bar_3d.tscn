@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://chpbar3dscene"]
+
+[ext_resource type="Script" path="res://scripts/hp_bar_3d.gd" id="1_script"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sprite"]
+viewport_path = NodePath("SubViewport")
+
+[node name="HPBar3D" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(100, 12)
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.015
+billboard = 1
+texture = SubResource("ViewportTexture_sprite")

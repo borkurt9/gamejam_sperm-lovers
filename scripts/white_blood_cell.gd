@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 @export var move_speed: float = 1.5
 @export var wander_range: float = 3.0
-@export var health: int = 5
+@export var max_health: int = 5
+var health: int
 @export var detection_range: float = 8.0
 @export var chase_speed: float = 2.5
 @export var attack_damage: int = 2
@@ -21,10 +22,12 @@ var is_aggro: bool = false
 var can_attack: bool = true
 
 @onready var attack_hitbox: Area3D = $AttackHitbox
+@onready var hp_bar: Node3D = $HPBar
 
 
 func _ready() -> void:
 	home_position = global_position
+	health = max_health
 	add_to_group("enemies")
 	pick_new_wander_target()
 
@@ -124,6 +127,9 @@ func detect_targets() -> void:
 func take_damage(amount: int) -> bool:
 	health -= amount
 	print("White blood cell took ", amount, " damage! Health: ", health)
+
+	if hp_bar:
+		hp_bar.update_health(health, max_health)
 
 	# Become aggro when shot
 	if not is_aggro:

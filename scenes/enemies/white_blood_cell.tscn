@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj7gawixh3dxo"]
+[gd_scene load_steps=6 format=3 uid="uid://bj7gawixh3dxo"]
 
 [ext_resource type="Script" uid="uid://d2jg3jdejd1ov" path="res://scripts/white_blood_cell.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://d2j3owkmbdrq1" path="res://art/glbtf/Wcell.glb" id="2_model"]
+[ext_resource type="PackedScene" uid="uid://chpbar3dscene" path="res://scenes/ui/hp_bar_3d.tscn" id="3_hpbar"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tk3an"]
 
@@ -24,3 +25,8 @@ collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox"]
 shape = SubResource("SphereShape3D_attack")
+
+[node name="HPBar" parent="." instance=ExtResource("3_hpbar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+bar_color = Color(0.8, 0.2, 0.2, 1)
+always_visible = false
