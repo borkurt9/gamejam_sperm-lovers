@@ -26,6 +26,8 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox"]
 shape = SubResource("SphereShape3D_attack")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
 [node name="HPBar" parent="." instance=ExtResource("3_hpbar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 fill_color = Color(0.8, 0.2, 0.2, 1)

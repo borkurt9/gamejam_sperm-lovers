@@ -23,6 +23,7 @@ var can_attack: bool = true
 
 @onready var attack_hitbox: Area3D = $AttackHitbox
 @onready var hp_bar: Node3D = $HPBar
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
 
 func _ready() -> void:
