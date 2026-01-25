@@ -369,9 +369,6 @@ _tile_transform_data = PackedFloat32Array(0, 0, 0, 0, 0.1, 0, 0, 0, 0, 0.1, 0, 0
 _quad_chunks = [NodePath("SquareChunk_R0_0_2_C0"), NodePath("SquareChunk_R0_0_3_C0"), NodePath("SquareChunk_R0_0_1_C0"), NodePath("SquareChunk_R-1_0_2_C0"), NodePath("SquareChunk_R-1_0_1_C0"), NodePath("SquareChunk_R0_0_0_C0"), NodePath("SquareChunk_R-1_0_0_C0"), NodePath("SquareChunk_R0_0_-1_C0"), NodePath("SquareChunk_R-1_0_-1_C0"), NodePath("SquareChunk_R1_0_-1_C0"), NodePath("SquareChunk_R1_0_-2_C0"), NodePath("SquareChunk_R0_0_-2_C0"), NodePath("SquareChunk_R1_0_-3_C0"), NodePath("SquareChunk_R0_0_-3_C0"), NodePath("SquareChunk_R-2_0_-1_C0"), NodePath("SquareChunk_R-2_0_0_C0"), NodePath("SquareChunk_R-2_0_-2_C0"), NodePath("SquareChunk_R-1_0_-2_C0"), NodePath("SquareChunk_R-3_0_-1_C0"), NodePath("SquareChunk_R1_0_0_C0")]
 metadata/_custom_type_script = "uid://4kv8f8ejgwqn"
 
-[node name="SiblingSperm" parent="Map" instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.943228, 0.7749324, -8.020477)
-
 [node name="Designs" type="Node3D" parent="."]
 
 [node name="Fridge" type="MeshInstance3D" parent="Designs"]
@@ -2481,26 +2478,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.738785, 1.0676317, -2.566
 [node name="SiblingSperm13" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.689438, 0.48746392, -3.9936914)
 
-[node name="WhiteBloodCell10" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.49380612, 1, 31.87667)
-
-[node name="WhiteBloodCell11" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.3285918, 0.9192414, 36.632893)
-
 [node name="SiblingSperm14" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(0.45087755, 0, -0.8925858, 0, 1, 0, 0.8925858, 0, 0.45087755, -1.1920936, 1.0580864, 51.674576)
 
 [node name="WhiteBloodCell12" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(0.14119498, 0, -0.98998183, 0.10832583, 0.99399537, 0.015449843, 0.98403734, -0.10942204, 0.14034717, -2.7342548, 1.2517078, 43.965736)
 
-[node name="WhiteBloodCell13" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.693325, 1.000001, 21.843407)
-
 [node name="WhiteBloodCell14" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.113758, 1, 11.594309)
-
-[node name="WhiteBloodCell15" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.846344, 1.000001, 16.614285)
+transform = Transform3D(-0.4019478, 0, -0.9156626, 0, 1, 0, 0.9156626, 0, -0.4019478, 36.113758, 1, 11.594309)
 
 [node name="WhiteBloodCell16" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.280146, 0.99999905, 22.66378)
@@ -2509,19 +2494,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.280146, 0.99999905, 22.663
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5727, 0.48746392, 24.034203)
 
 [node name="SiblingSperm16" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.403824, 0.48746392, 19.226734)
-
-[node name="SiblingSperm17" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.01056, 0.48746297, 19.670082)
-
-[node name="SiblingSperm18" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.315933, 0.48746392, 14.360296)
-
-[node name="WhiteBloodCell17" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.753555, 1, 12.8273735)
+transform = Transform3D(-0.92652863, 0, 0.37622422, 0, 1, 0, -0.37622422, 0, -0.92652863, 36.403824, 0.48746392, 19.226734)
 
 [node name="SiblingSperm19" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.289864, 0.48746392, 9.441898)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.335258, 0.78682137, 13.613669)
 
 [node name="WhiteBloodCell18" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.000172, 1, 7.00002)
@@ -2532,20 +2508,11 @@ transform = Transform3D(0.22605614, 0, -0.9741143, 0, 1, 0, 0.9741143, 0, 0.2260
 [node name="SiblingSperm20" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(-0.27563736, 0, -0.9612617, 0, 1, 0, 0.9612617, 0, -0.27563736, -0.69224966, 0.97073185, 3.1392255)
 
-[node name="WhiteBloodCell20" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(0.7652249, 0, -0.6437631, 0, 1, 0, 0.6437631, 0, 0.7652249, 0.9573519, 1.4236286, 11.784032)
-
-[node name="WhiteBloodCell21" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(0.30448198, 0, -0.9525181, 0, 1, 0, 0.9525181, 0, 0.30448198, 0.96246815, 1.0285501, 19.161573)
-
 [node name="WhiteBloodCell22" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(0.5400788, 0, -0.8416145, 0, 1, 0, 0.8416145, 0, 0.5400788, 1.8359089, 1, 22.156593)
 
 [node name="SiblingSperm21" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(-0.13583651, 0, -0.99073136, 0, 1, 0, 0.99073136, 0, -0.13583651, 2.9820232, 0.85423374, 27.04018)
-
-[node name="WhiteBloodCell23" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.255987, 1.2837608, 1.5323119)
 
 [node name="SiblingSperm22" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.71857, 0.8171911, 6.0544677)
@@ -2553,17 +2520,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.71857, 0.8171911, 6.05446
 [node name="WhiteBloodCell24" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.40644, 1, 1.2878876)
 
-[node name="SiblingSperm23" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.781609, 0.48746344, -6.2225504)
-
 [node name="WhiteBloodCell25" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(0.66556907, 0, -0.7463362, 0, 1, 0, 0.7463362, 0, 0.66556907, -26.41888, 0.9999995, -9.336996)
-
-[node name="WhiteBloodCell26" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(0.6951102, 0, -0.7189032, 0, 1, 0, 0.7189032, 0, 0.6951102, -33.440804, 1, 3.7231617)
-
-[node name="WhiteBloodCell27" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.244386, 1.328783, -4.629575)
+transform = Transform3D(0.66556907, 0, -0.7463362, 0, 1, 0, 0.7463362, 0, 0.66556907, -26.41888, 1.0000014, -9.336996)
 
 [node name="WhiteBloodCell28" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.207912, 1.4255867, -2.578621)
@@ -2574,65 +2532,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6573515, 1, -17.981476)
 [node name="WhiteBloodCell30" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.139414, 1.0000038, -14.169842)
 
-[node name="WhiteBloodCell31" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9264627, 1, -7.7129793)
-
 [node name="WhiteBloodCell32" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(0.5090714, 0, -0.8607243, 0, 1, 0, 0.8607243, 0, 0.5090714, -12.539419, 1, -15.391323)
-
-[node name="WhiteBloodCell33" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-0.67237973, 0, 0.7402064, 0, 1, 0, -0.7402064, 0, -0.67237973, 16.229433, 0.9999981, -10.352689)
-
-[node name="WhiteBloodCell34" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.596659, 1, -0.64565945)
-
-[node name="WhiteBloodCell35" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.632973, 1, -17.513273)
-
-[node name="SiblingSperm24" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(0.7552361, 0, -0.6554529, 0, 1, 0, 0.6554529, 0, 0.7552361, -11.780831, 0.48746392, -11.590502)
 
 [node name="SiblingSperm25" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(0.8607509, 0, 0.5090264, 0, 1, 0, -0.5090264, 0, 0.8607509, -4.993104, 0.48746583, -0.4830284)
 
 [node name="SiblingSperm26" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7091126, 0.48746392, -5.24262)
-
-[node name="SiblingSperm27" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6784015, 0.48746392, -9.979504)
-
-[node name="SiblingSperm28" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -5, 0, -16)
+transform = Transform3D(0.63607824, 0, 0.77162457, 0, 1, 0, -0.77162457, 0, 0.63607824, -4.7091126, 0.48746392, -5.24262)
 
 [node name="WhiteBloodCell36" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(-0.8207905, 0, 0.57122934, 0, 1, 0, -0.57122934, 0, -0.8207905, 26.10951, 1, -9.895084)
 
-[node name="SiblingSperm29" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.025388, 0.48746392, -9.93248)
-
 [node name="SiblingSperm30" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.316885, 0.487462, -15.312395)
-
-[node name="SiblingSperm31" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.05925, 0.487462, -16.48647)
 
 [node name="SiblingSperm32" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 22, 0, -4)
 
-[node name="SiblingSperm33" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(0.85285896, 0, 0.5221414, 0, 1, 0, -0.5221414, 0, 0.85285896, 17.960173, 0.487462, -5.3708186)
-
 [node name="WhiteBloodCell37" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 23, 1, -14)
-
-[node name="WhiteBloodCell38" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, -3, 1, -3)
-
-[node name="WhiteBloodCell39" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -29, 1, -14)
-
-[node name="SiblingSperm34" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.130142, 0.487462, -6.637855)
 
 [node name="SiblingSperm35" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, -31, 0, -10)
@@ -2649,44 +2568,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.988672, 0.48746392, -36.06
 [node name="SiblingSperm37" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.712032, 0.487462, -46.54294)
 
-[node name="WhiteBloodCell42" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5465, 1.0000019, -29.36819)
-
-[node name="WhiteBloodCell43" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1, -21)
-
 [node name="SiblingSperm38" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.826088, 0.48746392, -26.98085)
-
-[node name="WhiteBloodCell44" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(0.5127323, 0, -0.8585486, 0, 1, 0, 0.8585486, 0, 0.5127323, 29, 1, -21)
 
 [node name="SiblingSperm39" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(-0.14238705, 0, 0.98981106, 0, 1, 0, -0.98981106, 0, -0.14238705, 33.218678, 0.48746392, -15.3913555)
 
-[node name="WhiteBloodCell45" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1, -47)
-
 [node name="WhiteBloodCell46" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 1, -43)
-
-[node name="WhiteBloodCell47" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 37, 1, -58)
-
-[node name="WhiteBloodCell48" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, -66)
-
-[node name="WhiteBloodCell49" parent="." instance=ExtResource("32_igeo0")]
-transform = Transform3D(-0.9971034, 0, -0.07605773, 0, 1, 0, 0.07605773, 0, -0.9971034, 37, 1, -62)
 
 [node name="WhiteBloodCell50" parent="." instance=ExtResource("32_igeo0")]
 transform = Transform3D(-0.5399466, 0, -0.84169924, 0, 1, 0, 0.84169924, 0, -0.5399466, 37.52703, 1, -68.982)
 
 [node name="SiblingSperm40" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.331964, 0.48746774, -68.91936)
-
-[node name="SiblingSperm41" parent="." instance=ExtResource("31_3gp1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.038208, 0.48746774, -50.05129)
 
 [node name="SiblingSperm42" parent="." instance=ExtResource("31_3gp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -60)
