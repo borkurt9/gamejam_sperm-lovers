@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chpbar3dscene" path="res://scenes/ui/hp_bar_3d.tscn" id="8_hpbar"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qek5x"]
-size = Vector3(1, 3.8237305, 1)
+size = Vector3(1, 1.5, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_activation"]
 radius = 35.0
@@ -20,7 +20,7 @@ script = ExtResource("1_8afob")
 bullet_scene = ExtResource("5_bullet")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4118652, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("BoxShape3D_qek5x")
 
 [node name="SpermPlayer" parent="." instance=ExtResource("2_dovo2")]
