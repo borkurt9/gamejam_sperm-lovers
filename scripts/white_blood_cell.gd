@@ -29,6 +29,7 @@ var home_position: Vector3
 var current_target: Node3D = null
 var is_chasing: bool = false
 var is_aggro: bool = false
+var is_active: bool = true
 var can_attack: bool = true
 var wander_stuck_timer: float = 0.0
 var last_position: Vector3
@@ -240,3 +241,19 @@ func check_continuous_attack() -> void:
 
 func _reset_attack() -> void:
 	can_attack = true
+
+func activate() -> void:
+	if is_active:
+		return
+	is_active = true
+	set_physics_process(true)
+
+
+func deactivate() -> void:
+	if is_aggro and is_chasing:
+		return  # Don't deactivate mid-chase
+	if not is_active:
+		return
+	is_active = false
+	set_physics_process(false)
+	velocity = Vector3.ZERO

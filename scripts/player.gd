@@ -20,6 +20,7 @@ extends CharacterBody3D
 @onready var shoot_sound: AudioStreamPlayer3D = $ShootSound
 @onready var reload_sound: AudioStreamPlayer3D = $ReloadSound
 @onready var hp_bar: Node3D = $HPBar
+@onready var activation_radius: Area3D = $ActivationRadius
 
 # Isometric direction conversion
 var iso_forward := Vector3(-1, 0, -1).normalized()
@@ -41,7 +42,12 @@ func _ready() -> void:
 	health = max_health
 	add_to_group("player")
 	if hp_bar:
-		hp_bar.update_health(health, max_health)  
+		hp_bar.update_health(health, max_health)
+	if activation_radius:
+		activation_radius.body_entered.connect(_on_activation_radius_body_entered)
+		activation_radius.body_exited.connect(_on_activation_radius_body_exited)
+		# Deactivate enemies outside range at game start
+		_deactivate_distant_enemies.call_deferred()  
 
 func _physics_process(delta: float) -> void:
 	handle_aiming_input()
@@ -174,3 +180,31 @@ func die() -> void:
 	print("Player died!")
 	# For now just print - can add respawn/game over logic later
 	queue_free()
+
+
+func _deactivate_distant_enemies() -> void:
+	# Wait for physics to process overlaps (extra frames to ensure enemies have initialized)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	if not activation_radius:
+		return
+	# Get all enemies in range
+	var nearby_enemies: Array[Node3D] = []
+	for body in activation_radius.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			nearby_enemies.append(body)
+	# Deactivate all enemies NOT in range
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy not in nearby_enemies and enemy.has_method("deactivate"):
+			enemy.deactivate()
+
+
+func _on_activation_radius_body_entered(body: Node3D) -> void:
+	if body.is_in_group("enemies") and body.has_method("activate"):
+		body.activate()
+
+
+func _on_activation_radius_body_exited(body: Node3D) -> void:
+	if body.is_in_group("enemies") and body.has_method("deactivate"):
+		body.deactivate()
