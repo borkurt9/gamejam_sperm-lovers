@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn7acwhuy6h7r"]
+
+[ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="1_pta38"]
+
+[node name="SiblingSperm" instance=ExtResource("1_pta38")]
+
+[node name="SpermEnemy" parent="." index="1"]
+transform = Transform3D(-0.06237148, 0.20700422, 0.4508427, 0.20700423, -0.40208417, 0.2132547, 0.45084277, 0.21325465, -0.035544235, 2.2463474, 0.53539455, -0.20848036)
+
+[node name="HPBar" parent="." index="4"]
+transform = Transform3D(-0.12474296, 0.41400844, 0.9016854, 0.41400847, -0.80416834, 0.4265094, 0.90168554, 0.4265093, -0.07108847, 2.7431576, -0.4296077, 0.30333084)
+
+[node name="VisualPivot" type="Node3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8452208, 0, 0)
