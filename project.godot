@@ -72,6 +72,10 @@ shoot={
 
 rendering/force_right_to_left_layout_direction=true
 
+[autoload]
+
+GameManager="*res://autoload/game_manager.gd"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
