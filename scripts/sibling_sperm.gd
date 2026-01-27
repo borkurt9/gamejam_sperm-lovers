@@ -209,11 +209,15 @@ func become_aggro() -> void:
 	if is_aggro: return
 	is_aggro = true
 	print("Sibling sperm became aggro!")
+	if GameManager:
+		GameManager.on_enemy_aggro()
 
 func die() -> void:
 	print("Sibling died!")
 	if GameManager:
 		GameManager.add_karma_xp(-10.0)  # Bad action: -10 XP
+		if is_aggro:
+			GameManager.on_enemy_died()
 	# Wake nearby siblings so the whole group reacts
 	var all_enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in all_enemies:
