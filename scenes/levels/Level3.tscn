@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://brnefqptohqv8" path="res://art/glbtf/designsGlb/texture/blind_van_psx_style_0.png" id="31_pjk75"]
 [ext_resource type="Texture2D" uid="uid://d2hv3wbg2njv6" path="res://art/glbtf/designsGlb/texture/blind_van_psx_style_1.png" id="32_j3bsq"]
 [ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="33_tamh3"]
-[ext_resource type="PackedScene" uid="uid://bj7gawixh3dxo" path="res://scenes/enemies/white_blood_cell.tscn" id="34_jjxhi"]
+[ext_resource type="PackedScene" uid="uid://cwbclvl3scene" path="res://scenes/enemies/white_blood_cell_lvl3.tscn" id="34_jjxhi"]
 [ext_resource type="Script" uid="uid://chsrxgfvon4uc" path="res://scripts/abstract_puzzle0.gd" id="35_5smbu"]
 [ext_resource type="Script" uid="uid://yj6gc1ofhwo1" path="res://scripts/pillars.gd" id="36_eg0l2"]
 [ext_resource type="Material" uid="uid://d3xj5v3gqg627" path="res://art/glbtf/entitiesMaterials/pillar/Material.001.tres" id="37_kwcml"]

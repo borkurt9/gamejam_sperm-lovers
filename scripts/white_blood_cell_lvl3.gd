@@ -16,6 +16,9 @@ const DeathSplash = preload("res://scenes/effects/death_splash.tscn")
 @export var separation_radius: float = 3.0
 @export var separation_force: float = 2.0
 @export var model_rotation_offset: float = -PI/2
+var is_corpse := false
+@export var corpse_collision_layer := 2
+@export var corpse_collision_mask := (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3)
 # Wake-up range for nearby violence (shooting / death nearby)
 @export var wake_on_violence_range: float = 14.0      # Slightly larger than sperm for WBC "alertness"
 
@@ -51,7 +54,7 @@ func _ready() -> void:
 	health = max_health
 	add_to_group("enemies")
 
-	print("WhiteCell spawned – layers: ", collision_layer, " groups: ", get_groups())
+	print("WhiteCell (lvl3) spawned – layers: ", collision_layer, " groups: ", get_groups())
 	if not static_mode: pick_new_wander_target()
 
 	if attack_hitbox:
@@ -64,12 +67,15 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Completely frozen when static & peaceful
+
 	if static_mode and not is_aggro:
 		velocity = Vector3.ZERO
 		move_and_slide()
 		return
-
+	if is_corpse:
+		velocity = velocity.move_toward(Vector3.ZERO, 20 * delta)
+		move_and_slide()
+		return
 	# Detect player when aggro
 	if is_aggro: detect_targets()
 
@@ -195,7 +201,7 @@ func detect_targets() -> void:
 	is_chasing = false
 
 func take_damage(amount: int) -> bool:
-	if is_dead:
+	if is_dead or is_corpse:
 		return false
 	health -= amount
 	print("White blood cell took ", amount, " damage! Health: ", health)
@@ -210,6 +216,7 @@ func die() -> void:
 	if is_dead: return  # Prevent double-death from multiple pellets
 	is_dead = true
 
+	rotation.x = PI / 2
 	print("White blood cell died!")
 	# Spawn death effect
 	var splash = DeathSplash.instantiate()
@@ -232,7 +239,24 @@ func die() -> void:
 		GameManager.add_karma_xp(-10.0)  # Bad action: -10 XP
 		if is_aggro:
 			GameManager.on_enemy_died()
-	queue_free()
+	make_corpse()
+
+func make_corpse() -> void:
+	print("Turning WhiteCell into corpse")
+	is_corpse = true
+	is_aggro = false
+	is_chasing = false
+	can_attack = false
+	static_mode = true
+	is_active = false
+	velocity = Vector3.ZERO
+
+	remove_from_group("enemies")
+
+	collision_layer = 1 << corpse_collision_layer
+	collision_mask = corpse_collision_mask
+	add_to_group("corpse")
+	add_to_group("conductive")
 
 func become_aggro() -> void:
 	if is_aggro: return
