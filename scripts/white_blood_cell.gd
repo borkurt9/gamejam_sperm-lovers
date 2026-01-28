@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const DeathSplash = preload("res://scenes/effects/death_splash.tscn")
+
 # Exported variable
 @export var static_mode: bool = false
 @export var move_speed: float = 1.5
@@ -14,7 +16,10 @@ extends CharacterBody3D
 @export var separation_radius: float = 3.0
 @export var separation_force: float = 2.0
 @export var model_rotation_offset: float = -PI/2
-
+var is_corpse := false
+@export var becomes_conductive_corpse := true
+@export var corpse_collision_layer := 2
+@export var corpse_collision_mask := (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3)
 # Wake-up range for nearby violence (shooting / death nearby)
 @export var wake_on_violence_range: float = 14.0      # Slightly larger than sperm for WBC "alertness"
 
@@ -36,6 +41,7 @@ var last_position: Vector3
 
 # Shoot-to-talk
 var player_in_hitbox: bool = false
+var is_dead: bool = false
 
 # Nodes
 @onready var attack_hitbox: Area3D = $AttackHitbox
@@ -62,12 +68,17 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Completely frozen when static & peaceful
+
 	if static_mode and not is_aggro:
 		velocity = Vector3.ZERO
 		move_and_slide()
 		return
-
+	if is_corpse:
+		move_and_slide()
+		return
+	if becomes_conductive_corpse:
+		velocity = velocity.move_toward(Vector3.ZERO, 20 * delta)
+		move_and_slide()
 	# Detect player when aggro
 	if is_aggro: detect_targets()
 
@@ -203,20 +214,55 @@ func take_damage(amount: int) -> bool:
 	return false
 
 func die() -> void:
+	
+	rotation.x = PI / 2
 	print("White blood cell died!")
-	if GameManager:
-		GameManager.add_karma_xp(-10.0)  # Bad action: -10 XP
-	# Wake nearby enemies (group reaction)
+	# Spawn death effect
+	var splash = DeathSplash.instantiate()
+	var colors: Array[Color] = [
+		Color(0.95, 0.95, 0.95), # White
+		Color(1.0, 0.4, 0.6),    # Pink
+		Color(0.5, 0.0, 0.15),   # Maroon
+	]
+	splash.set_colors(colors)
+	var death_pos = global_position
+	get_tree().current_scene.add_child(splash)
+	splash.global_position = death_pos
+	# Wake nearby enemies FIRST so they become aggro before we decrement the count
 	var all_enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in all_enemies:
 		if enemy != self and enemy.has_method("_on_nearby_violence"):
 			enemy._on_nearby_violence(global_position)
-	queue_free()
+	# Now notify GameManager (karma and aggro count)
+	if GameManager:
+		GameManager.add_karma_xp(-10.0)  # Bad action: -10 XP
+		if is_aggro:
+			GameManager.on_enemy_died()
+	if becomes_conductive_corpse:
+		make_corpse()
+	else:
+		queue_free()
+	
+func make_corpse() -> void:
+	print("Turning WhiteCell into corpse")
+	is_corpse = true 
+	is_aggro = false
+	is_chasing = false
+	can_attack = false
+	static_mode = true
+	is_active = false
+	velocity = Vector3.ZERO
 
+	collision_layer = 1 << corpse_collision_layer
+	collision_mask = corpse_collision_mask
+	add_to_group("corpse")
+	add_to_group("conductive")
 func become_aggro() -> void:
 	if is_aggro: return
 	is_aggro = true
 	print("White blood cell became aggro!")
+	if GameManager:
+		GameManager.on_enemy_aggro()
 
 
 func _on_nearby_violence(violence_position: Vector3) -> void:

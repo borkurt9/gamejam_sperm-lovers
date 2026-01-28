@@ -1,7 +1,6 @@
 [gd_scene load_steps=39 format=4 uid="uid://dc3nrto6h6374"]
 
 [ext_resource type="Script" uid="uid://c2vv85mquw12b" path="res://scripts/secret_ending.gd" id="1_2mu0v"]
-[ext_resource type="PackedScene" uid="uid://qxin0n6vbcb7" path="res://scenes/player/player.tscn" id="1_jbqir"]
 [ext_resource type="Script" uid="uid://c2xaendkngky8" path="res://scripts/camera_follow.gd" id="2_yautc"]
 [ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="3_fr1um"]
 [ext_resource type="Script" path="res://scripts/next_zone_enabler.gd" id="3_os2yb"]
@@ -21,6 +20,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c642jqt64ckbf" path="res://art/glbtf/designsGlb/3dmeshes/FAB_table.res" id="16_os2yb"]
 [ext_resource type="PackedScene" uid="uid://c6sr2w4xbnhs6" path="res://scenes/dialog_system.tscn" id="18_v6k17"]
 [ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="21_c7nhy"]
+[ext_resource type="PackedScene" uid="uid://qxin0n6vbcb7" path="res://scenes/player/player.tscn" id="22_player"]
 
 [sub_resource type="Environment" id="Environment_hfwtw"]
 background_mode = 1
@@ -339,7 +339,7 @@ script = ExtResource("8_hfwtw")
 [node name="@CollisionShape3D@37037" type="CollisionShape3D" parent="tilemap/Level0/_StaticBody3D_37038"]
 shape = ExtResource("9_2mu0v")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_jbqir")]
+[node name="Player" parent="." instance=ExtResource("22_player") groups=["player"]]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

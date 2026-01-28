@@ -6,6 +6,62 @@ const XP_PER_LEVEL: float = 100.0
 
 var raw_karma: float = 0.0
 
+# Music system
+var aggro_enemy_count: int = 0
+var default_music: AudioStreamPlayer
+var aggro_music: AudioStreamPlayer
+
+
+func _ready() -> void:
+	_setup_music()
+
+
+func _setup_music() -> void:
+	default_music = AudioStreamPlayer.new()
+	default_music.stream = preload("res://sounds/defaultBG.mp3")
+	default_music.bus = "Master"
+	default_music.autoplay = true
+	add_child(default_music)
+	default_music.finished.connect(_on_default_music_finished)
+
+	aggro_music = AudioStreamPlayer.new()
+	aggro_music.stream = preload("res://sounds/enemyAggroBG.mp3")
+	aggro_music.bus = "Master"
+	add_child(aggro_music)
+	aggro_music.finished.connect(_on_aggro_music_finished)
+
+
+func on_enemy_aggro() -> void:
+	aggro_enemy_count += 1
+	if aggro_enemy_count == 1:
+		_switch_to_aggro_music()
+
+
+func on_enemy_died() -> void:
+	aggro_enemy_count = max(0, aggro_enemy_count - 1)
+	if aggro_enemy_count == 0:
+		_switch_to_default_music()
+
+
+func _switch_to_aggro_music() -> void:
+	default_music.stop()
+	aggro_music.play()
+
+
+func _switch_to_default_music() -> void:
+	aggro_music.stop()
+	default_music.play()
+
+
+func _on_default_music_finished() -> void:
+	if aggro_enemy_count == 0:
+		default_music.play()
+
+
+func _on_aggro_music_finished() -> void:
+	if aggro_enemy_count > 0:
+		aggro_music.play()
+
 
 func add_karma_xp(amount: float) -> void:
 	raw_karma += amount / XP_PER_LEVEL
