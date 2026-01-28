@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c2xaendkngky8" path="res://scripts/camera_follow.gd" id="1_dywbp"]
 [ext_resource type="Script" uid="uid://ctho1bjtpp6r6" path="res://scripts/level1_controller.gd" id="1_nm6kf"]
 [ext_resource type="Script" uid="uid://bli432i5uj51v" path="res://addons/TileMapLayer3D/core/tile_creation_placement/tilemap_layer_settings.gd" id="2_bfxgj"]
-[ext_resource type="Script" path="res://scripts/next_zone_enabler.gd" id="3_agrr7"]
+[ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="3_agrr7"]
 [ext_resource type="Texture2D" uid="uid://c0xigj7fpr2oc" path="res://art/textures/tileset.png" id="3_dywbp"]
 [ext_resource type="Script" uid="uid://c2lxt2vjdjb4b" path="res://addons/TileMapLayer3D/nodes/static_collision_body.gd" id="4_2r1tl"]
 [ext_resource type="Shape3D" uid="uid://c38fhrdtlijdg" path="res://scenes/levels/level1_CollisionData/level1_TileMapLayer3D2_collision.res" id="4_8a7m2"]
