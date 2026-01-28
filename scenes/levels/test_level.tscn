@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c2vv85mquw12b" path="res://scripts/secret_ending.gd" id="1_2mu0v"]
 [ext_resource type="Script" uid="uid://c2xaendkngky8" path="res://scripts/camera_follow.gd" id="2_yautc"]
 [ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="3_fr1um"]
-[ext_resource type="Script" path="res://scripts/next_zone_enabler.gd" id="3_os2yb"]
+[ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="3_os2yb"]
 [ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="4_upsmr"]
 [ext_resource type="PackedScene" uid="uid://bj7gawixh3dxo" path="res://scenes/enemies/white_blood_cell.tscn" id="4_v45ci"]
 [ext_resource type="PackedScene" uid="uid://c1ik22b8i70y5" path="res://scenes/levels/level1.tscn" id="6_qgrpf"]
@@ -165,8 +165,7 @@ omni_range = 7.206023
 
 [node name="AbstractDoor" parent="." instance=ExtResource("4_upsmr")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.5911617, 1.474934, -16.7337)
-auto_chain_dialog_id = "DoorethyL0_0"
-enemy_group = "enemies"
+auto_chain_dialog_id = "DoorethyL0"
 
 [node name="SecretZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7255995, 1.4062264, 6.462715)

@@ -23,6 +23,7 @@ height = 1.823
 collision_layer = 5
 collision_mask = 2
 script = ExtResource("1_2as5g")
+alert_radius = 6.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, -0.25, 0, 0.25, -1.0927847e-08, 0, 0, 0)

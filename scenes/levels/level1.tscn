@@ -364,7 +364,7 @@ move_speed = 8.0
 
 [node name="AbstractDoor" parent="." instance=ExtResource("13_lgguw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.347836, 1.3703902, 82.90255)
-auto_chain_dialog_id = "DoorethyL1_0"
+auto_chain_dialog_id = "DoorethyL1"
 unlock_condition = 3
 enemy_group = "enemies"
 puzzle_signal_node = NodePath("../AbstractPuzzle0")
@@ -391,7 +391,7 @@ shape = SubResource("BoxShape3D_b2isc")
 environment = SubResource("Environment_1seuy")
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment" node_paths=PackedStringArray("target")]
-transform = Transform3D(0.7071068, -0.4055798, 0.579228, 0, 0.81915206, 0.57357645, -0.7071068, -0.4055798, 0.579228, 5, 5, 5)
+transform = Transform3D(0.7071068, -0.4055798, 0.579228, 0, 0.81915206, 0.57357645, -0.7071068, -0.4055798, 0.579228, 26.282719, 5, 90.73609)
 projection = 1
 size = 10.0
 script = ExtResource("1_dywbp")
