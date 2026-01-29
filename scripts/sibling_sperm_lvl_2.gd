@@ -23,12 +23,12 @@ signal died()  # For MapManager respawn system
 @export var casual_talk_block: String = "SpermDialogs"
 @export var talk_max_distance: float = 4.5
 
-@export var attraction_speed: float = 4.0
+@export var attraction_speed: float = 2.5  # Reduced for better pacifist balance
 @export var attraction_stop_distance: float = 0.6
 
 # Contact damage (for valve puzzle)
 @export var contact_damage: int = 1
-@export var contact_damage_cooldown: float = 1.0
+@export var contact_damage_cooldown: float = 1.5  # More time between hits
 var can_deal_contact_damage: bool = true
 
 # Valve attraction

@@ -33,6 +33,10 @@ func _ready() -> void:
 		interaction_area.body_entered.connect(_on_body_entered)
 		interaction_area.body_exited.connect(_on_body_exited)
 
+	# Pass fill time to progress bar
+	if progress_bar and progress_bar.has_method("set_fill_time"):
+		progress_bar.set_fill_time(fill_time)
+
 	_update_visuals()
 
 func _process(delta: float) -> void:

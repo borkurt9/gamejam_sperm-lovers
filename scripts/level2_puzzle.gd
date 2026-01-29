@@ -48,8 +48,12 @@ func _on_valve_started(valve: Node) -> void:
 	active_valve = valve
 	valve_activated.emit(valve.global_position)
 
-	# Notify all sperms about active valve
-	_notify_sperms_valve_active(valve.global_position)
+	# Delay before alerting sperms - gives player a head start on progress
+	await get_tree().create_timer(1.5).timeout
+
+	# Only notify if this valve is still active after the delay
+	if active_valve == valve:
+		_notify_sperms_valve_active(valve.global_position)
 
 func _on_valve_stopped(valve: Node) -> void:
 	if active_valve == valve:
