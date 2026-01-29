@@ -12,17 +12,18 @@
 [ext_resource type="PackedScene" uid="uid://b4grjp5wbo223" path="res://scenes/ui/karma_bar_3d.tscn" id="10_urb0r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qek5x"]
-size = Vector3(1, 1.5, 1)
+size = Vector3(1, 2.072754, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_activation"]
 radius = 35.0
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 7
 script = ExtResource("1_x2fg5")
 bullet_scene = ExtResource("2_f1jol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46362305, 0)
 shape = SubResource("BoxShape3D_qek5x")
 
 [node name="SpermPlayer" parent="." instance=ExtResource("3_vwssu")]

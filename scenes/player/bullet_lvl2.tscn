@@ -20,8 +20,8 @@ radius = 0.2
 height = 1.823
 
 [node name="Bullet" type="Area3D"]
-collision_layer = 5
-collision_mask = 2
+collision_layer = 7
+collision_mask = 3
 script = ExtResource("1_as81w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

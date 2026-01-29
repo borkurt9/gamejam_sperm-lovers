@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@onready var mesh: MeshInstance3D = $Mesh
+
 # Movement
 @export var move_speed: float = 6.0
 @export var aim_move_speed_multiplier: float = 0.5 # divison slow
@@ -184,11 +184,6 @@ func take_damage(
 
 	health -= amount
 	print("Player took ", amount, " damage! Health: ", health)
-	if mesh and mesh.material_override:
-		mesh.material_override.emission = Color.GREEN
-
-		get_tree().create_timer(0.15).timeout.connect(_reset_burn_effect)
-
 	if hp_bar:
 		hp_bar.update_health(health, max_health)
 	if hp_bar:
@@ -203,12 +198,8 @@ func take_damage(
 	is_invincible = true
 	get_tree().create_timer(invincibility_duration).timeout.connect(_end_invincibility)
 	
-	if health <= 0:
-		die()
-		
-func _reset_burn_effect() -> void:
-	if mesh and mesh.material_override:
-		mesh.material_override.emission = Color.BLACK
+	if health <= 0: die()
+
 
 func _end_invincibility() -> void:
 	is_invincible = false

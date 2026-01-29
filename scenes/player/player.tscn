@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qxin0n6vbcb7"]
+[gd_scene load_steps=13 format=3 uid="uid://qxin0n6vbcb7"]
 
 [ext_resource type="Script" uid="uid://dlbvddyy2ax2w" path="res://scripts/player.gd" id="1_8afob"]
 [ext_resource type="PackedScene" uid="uid://dpumo2pm1yuxh" path="res://art/glbtf/SpermPlayer.glb" id="2_dovo2"]
@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ldxenlh5k7yv" path="res://sounds/shotgun-reload.wav" id="7_0owmy"]
 [ext_resource type="AudioStream" uid="uid://csjxklg0t6yhg" path="res://sounds/pistol-cock-6014.wav" id="8_5gtgg"]
 [ext_resource type="PackedScene" uid="uid://chpbar3dscene" path="res://scenes/ui/hp_bar_3d.tscn" id="8_hpbar"]
-[ext_resource type="PackedScene" uid="uid://karmabar3dscene" path="res://scenes/ui/karma_bar_3d.tscn" id="9_karma"]
+[ext_resource type="PackedScene" uid="uid://b4grjp5wbo223" path="res://scenes/ui/karma_bar_3d.tscn" id="9_karma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qek5x"]
 size = Vector3(1, 1.5, 1)
