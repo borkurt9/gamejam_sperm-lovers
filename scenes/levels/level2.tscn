@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dinjw7fdmiu4h"]
+[gd_scene load_steps=34 format=4 uid="uid://fsvdr7aekava"]
 
 [ext_resource type="Script" uid="uid://c3vfnjxg8q0kx" path="res://scripts/elevato_map_manager.gd" id="1_eqj1i"]
 [ext_resource type="Script" uid="uid://ddwnhavqvrmbu" path="res://scripts/elevator.gd" id="1_s37nd"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://bgyvkoqsaujcd" path="res://scripts/elevator_zone_validator.gd" id="14_hkuam"]
 [ext_resource type="Script" uid="uid://cxnp2006t2onx" path="res://scripts/button_elevator.gd" id="15_f3b2k"]
 [ext_resource type="Script" uid="uid://bu3qwd8dftqnq" path="res://scripts/attraction_trigger.gd" id="16_sqrei"]
+[ext_resource type="PackedScene" path="res://scenes/objects/valve.tscn" id="18_yhrca"]
+[ext_resource type="Script" uid="uid://dh5yq6ft80q7l" path="res://scripts/level2_puzzle.gd" id="19_4eecq"]
 
 [sub_resource type="Resource" id="Resource_gycjm"]
 script = ExtResource("4_oyk6k")
@@ -181,6 +183,8 @@ metadata/_custom_type_script = "uid://4kv8f8ejgwqn"
 
 [node name="enviroment_mesh" type="StaticBody3D" parent="Map"]
 visible = false
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("6_gycjm")
 
 [node name="@CollisionShape3D@359372" type="CollisionShape3D" parent="Map/enviroment_mesh"]
@@ -205,6 +209,7 @@ omni_range = 7.206023
 [node name="Player" parent="." instance=ExtResource("5_26lgc")]
 transform = Transform3D(-0.9978015, 0, 0.0662738, 0, 1, 0, -0.0662738, 0, -0.9978015, -2.4676037, 0.81221247, 16.995956)
 collision_layer = 3
+move_speed = 7.5
 bullet_scene = ExtResource("7_q3hvl")
 
 [node name="Elevator_final" type="Node3D" parent="."]
@@ -282,22 +287,31 @@ one_shot = true
 autostart = true
 
 [node name="Marker1" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.702349, 0.5, 4.8805227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52, 0.8, 5.691)
 
 [node name="Marker2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, 3.0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.833, 0.8, 5.256)
 
 [node name="Marker3" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0, 0.5, 6.0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.167, 0.8, 6)
 
 [node name="Marker4" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0, 0.5, 7.0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.968, 0.8, 0.265)
 
 [node name="Marker5" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0, 0.5, 2.0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.539, 0.8, 3.082)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_f3b2k")
 
-[node name="SiblingSperm" parent="." instance=ExtResource("2_j7pir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0455666, 0.48746297, 4.8548636)
+[node name="Valve" parent="." instance=ExtResource("18_yhrca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9511347, 0, -2.8899436)
+
+[node name="Valve2" parent="." instance=ExtResource("18_yhrca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9754057, 0, -4.6091404)
+
+[node name="Valve3" parent="." instance=ExtResource("18_yhrca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19, 0, -2.849)
+
+[node name="Level2Puzzle" type="Node" parent="."]
+script = ExtResource("19_4eecq")

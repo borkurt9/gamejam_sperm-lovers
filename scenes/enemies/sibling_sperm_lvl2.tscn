@@ -28,7 +28,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="AttackHitbox" type="Area3D" parent="."]
 collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox" groups=["attraction_toilet"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox"]
 shape = SubResource("SphereShape3D_attack")
 
 [node name="HPBar" parent="." instance=ExtResource("3_8yigq")]
