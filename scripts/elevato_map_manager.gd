@@ -4,9 +4,12 @@ extends Node3D
 @export var sibling_scene: PackedScene
 @export var spawn_on_start: bool = true
 @export var spawn_check_radius: float = 0.5  # Reduced radius for closer spawning
+@export var respawn_enabled: bool = true
+@export var respawn_delay: float = 3.0  # Seconds before respawn
 
 # --- Tracking ---
 var active_siblings: Array[Node] = []
+var marker_spawn_positions: Array[Vector3] = []  # All marker positions for respawning
 
 # --- Node References ---
 @onready var markers_parent: Node3D = get_node_or_null("Markers")
@@ -45,6 +48,9 @@ func spawn_all_siblings() -> void:
 			# Use marker position directly - markers should be placed at correct height in editor
 			var spawn_pos = marker.global_position
 
+			# Store marker position for respawning
+			marker_spawn_positions.append(spawn_pos)
+
 			# Only check if position is too close to existing ones
 			var too_close = false
 			for existing_pos in spawned_positions:
@@ -52,7 +58,7 @@ func spawn_all_siblings() -> void:
 				if distance < spawn_check_radius:
 					too_close = true
 					break
-			
+
 			if not too_close:
 				spawn_sibling_at_position(spawn_pos)
 				spawned_positions.append(spawn_pos)
@@ -97,9 +103,41 @@ func get_active_count() -> int:
 # Signal handler for sibling death
 func _handle_sibling_died(sibling: Node) -> void:
 	print("Sibling died: ", sibling.name if sibling else "Unknown")
+	var spawn_pos = sibling.global_position if sibling else Vector3.ZERO
 	active_siblings.erase(sibling)
+
+	# Schedule respawn after delay
+	if respawn_enabled and spawn_pos != Vector3.ZERO:
+		_schedule_respawn(spawn_pos)
 
 # Signal handler for sibling removal
 func _handle_sibling_removed(sibling: Node) -> void:
 	print("Sibling removed from tree: ", sibling.name if sibling else "Unknown")
 	active_siblings.erase(sibling)
+
+func _schedule_respawn(spawn_pos: Vector3) -> void:
+	print("Scheduling respawn in ", respawn_delay, " seconds at ", spawn_pos)
+	await get_tree().create_timer(respawn_delay).timeout
+
+	if not respawn_enabled:
+		print("Respawn cancelled - respawning disabled")
+		return
+
+	# Find closest marker position to use for respawn
+	var respawn_position = _get_random_marker_position()
+	if respawn_position != Vector3.ZERO:
+		spawn_sibling_at_position(respawn_position)
+		print("Respawned sibling at marker position")
+
+func _get_random_marker_position() -> Vector3:
+	if marker_spawn_positions.is_empty():
+		return Vector3.ZERO
+	return marker_spawn_positions.pick_random()
+
+func disable_respawn() -> void:
+	respawn_enabled = false
+	print("Respawning disabled")
+
+func enable_respawn() -> void:
+	respawn_enabled = true
+	print("Respawning enabled")
