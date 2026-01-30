@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://fsvdr7aekava"]
+[gd_scene load_steps=40 format=4 uid="uid://fsvdr7aekava"]
 
 [ext_resource type="Script" uid="uid://c3vfnjxg8q0kx" path="res://scripts/elevato_map_manager.gd" id="1_eqj1i"]
 [ext_resource type="Script" uid="uid://ddwnhavqvrmbu" path="res://scripts/elevator.gd" id="1_s37nd"]
@@ -20,6 +20,28 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/valve.tscn" id="18_yhrca"]
 [ext_resource type="Script" path="res://scripts/level2_puzzle.gd" id="19_4eecq"]
 [ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="20_uh3oe"]
+[ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="21_4p5gg"]
+[ext_resource type="PackedScene" uid="uid://ckxupilx0417l" path="res://scenes/levels/Level3.tscn" id="22_hmwnr"]
+[ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="23_4ao78"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmwnr"]
+size = Vector3(21.449158, 3.7069092, 24.15139)
+
+[sub_resource type="Environment" id="Environment_j7pir"]
+background_mode = 1
+background_color = Color(0.4, 0, 0, 1)
+ambient_light_color = Color(0.70980394, 0, 0, 1)
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.40176448, 0, 0, 1)
+fog_light_energy = 5.0
+fog_density = 1.0
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_emission = Color(0.4, 0, 0, 1)
+volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
 
 [sub_resource type="Resource" id="Resource_gycjm"]
 script = ExtResource("4_oyk6k")
@@ -43,22 +65,6 @@ selected_tile_uv = Rect2(32, 96, 32, 32)
 script = ExtResource("4_oyk6k")
 tileset_texture = ExtResource("5_gycjm")
 selected_tile_uv = Rect2(32, 32, 32, 32)
-
-[sub_resource type="Environment" id="Environment_j7pir"]
-background_mode = 1
-background_color = Color(0.4, 0, 0, 1)
-ambient_light_color = Color(0.70980394, 0, 0, 1)
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.40176448, 0, 0, 1)
-fog_light_energy = 5.0
-fog_density = 1.0
-fog_sky_affect = 0.0
-volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0, 0, 0, 1)
-volumetric_fog_emission = Color(0.4, 0, 0, 1)
-volumetric_fog_sky_affect = 0.0
-adjustment_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgky1"]
 transparency = 2
@@ -135,6 +141,51 @@ shader_parameter/virtual_res = Vector2(320, 240)
 script = ExtResource("1_eqj1i")
 sibling_scene = ExtResource("2_j7pir")
 
+[node name="AbstractDoor" parent="." instance=ExtResource("23_4ao78")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -2.4484153, 1.7833438, 11.606695)
+auto_chain_dialog_id = "DoorethyL2"
+
+[node name="NextZone" type="Area3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 20, 0)
+disable_mode = 2
+script = ExtResource("21_4p5gg")
+next_scene = ExtResource("22_hmwnr")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="NextZone"]
+transform = Transform3D(1, 0, 0, 0, -0.7986355, 0.6018151, 0, -0.6018151, -0.7986355, 0.33370256, 1.7161062, -0.41686058)
+light_color = Color(0.9137255, 0, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 1.906
+light_volumetric_fog_energy = 3.935
+spot_range = 5.1070023
+spot_angle = 65.67086
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4767146, 0.6329956, -2.4061453)
+shape = SubResource("BoxShape3D_hmwnr")
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j7pir")
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment2" node_paths=PackedStringArray("target")]
+transform = Transform3D(0.7071068, -0.4055798, 0.579228, 0, 0.81915206, 0.57357645, -0.7071068, -0.4055798, 0.579228, 5, 5, 12.997957)
+projection = 1
+size = 10.0
+script = ExtResource("3_eqj1i")
+target = NodePath("../../Player")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment2/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, -2.9802322e-07, 0, 3.2782555e-07, 1, 0.05516666, 0.65837556, -6.167001)
+light_color = Color(0.9647059, 0.9411765, 0.30588236, 1)
+light_energy = 3.0
+omni_range = 7.206023
+
+[node name="Player" parent="." instance=ExtResource("5_26lgc")]
+transform = Transform3D(-0.9978015, 0, 0.0662738, 0, 1, 0, -0.0662738, 0, -0.9978015, -2.4676037, 0.81221247, 16.995956)
+collision_layer = 3
+move_speed = 7.5
+bullet_scene = ExtResource("7_q3hvl")
+
 [node name="Map" type="Node3D" parent="."]
 
 [node name="Elevator mesh 1" type="Node3D" parent="Map" node_paths=PackedStringArray("_quad_chunks", "_box_chunks", "_prism_chunks")]
@@ -194,28 +245,6 @@ script = ExtResource("6_gycjm")
 
 [node name="@CollisionShape3D@359372" type="CollisionShape3D" parent="Map/enviroment_mesh"]
 shape = ExtResource("7_8i1lk")
-
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_j7pir")
-
-[node name="Camera3D" type="Camera3D" parent="WorldEnvironment2" node_paths=PackedStringArray("target")]
-transform = Transform3D(0.7071068, -0.4055798, 0.579228, 0, 0.81915206, 0.57357645, -0.7071068, -0.4055798, 0.579228, 5, 5, 12.997957)
-projection = 1
-size = 10.0
-script = ExtResource("3_eqj1i")
-target = NodePath("../../Player")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment2/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, -2.9802322e-07, 0, 3.2782555e-07, 1, 0.05516666, 0.65837556, -6.167001)
-light_color = Color(0.9647059, 0.9411765, 0.30588236, 1)
-light_energy = 3.0
-omni_range = 7.206023
-
-[node name="Player" parent="." instance=ExtResource("5_26lgc")]
-transform = Transform3D(-0.9978015, 0, 0.0662738, 0, 1, 0, -0.0662738, 0, -0.9978015, -2.4676037, 0.81221247, 16.995956)
-collision_layer = 3
-move_speed = 7.5
-bullet_scene = ExtResource("7_q3hvl")
 
 [node name="Elevator_final" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.06, 0.1, 0.013829231)
@@ -327,3 +356,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2

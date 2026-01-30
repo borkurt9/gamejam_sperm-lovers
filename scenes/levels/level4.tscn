@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://ygqoffjseh23"]
+[gd_scene load_steps=71 format=4 uid="uid://ygqoffjseh23"]
 
 [ext_resource type="Script" uid="uid://c2xaendkngky8" path="res://scripts/camera_follow.gd" id="1_btbtd"]
 [ext_resource type="Script" uid="uid://dbk76ihl3wkx8" path="res://scripts/level_4.gd" id="2_nxpvw"]
@@ -30,7 +30,11 @@
 [ext_resource type="Material" uid="uid://b3shrxnqdx52k" path="res://art/glbtf/entitiesMaterials/spermEnemy/Material.001.tres" id="26_g3f77"]
 [ext_resource type="Material" uid="uid://c0dvc886h8ojp" path="res://art/glbtf/entitiesMaterials/spermEnemy/Material.002.tres" id="27_1x4kh"]
 [ext_resource type="Material" uid="uid://cikkfkwasyyab" path="res://art/glbtf/entitiesMaterials/whiteCell/Material.001.tres" id="28_x12d3"]
+[ext_resource type="PackedScene" uid="uid://yerx7f6syprx" path="res://scenes/levels/Level5GOOD.tscn" id="30_x12d3"]
 [ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="31_1x4kh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5e6m"]
+size = Vector3(2.9841309, 3.7069092, 2.3623924)
 
 [sub_resource type="Environment" id="Environment_eh8f3"]
 background_mode = 1
@@ -89,8 +93,10 @@ albedo_color = Color(1, 1, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1ckg"]
 albedo_color = Color(0.54093844, 0.54093874, 0, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_1x4kh"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_g3f77"]
-size = Vector3(5.4274597, 4.133789, 3.7385254)
+size = Vector3(5.4274597, 4.133789, 2.7385864)
 
 [sub_resource type="Resource" id="Resource_60s12"]
 script = ExtResource("12_ml44n")
@@ -250,15 +256,53 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ie8wh")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k5e6m"]
-size = Vector3(2.9841309, 3.7069092, 2.3623924)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x12d3"]
 shader = ExtResource("31_1x4kh")
 shader_parameter/viewport_size = Vector2(640, 480)
 shader_parameter/virtual_res = Vector2(320, 240)
 
 [node name="Level4" type="Node3D"]
+
+[node name="Doorethys" type="Node3D" parent="."]
+
+[node name="AbstractDoor" parent="Doorethys" instance=ExtResource("10_g8eim")]
+transform = Transform3D(0.83307767, 0, 0.86370236, 0, 1.2000002, 0, -0.86370236, 0, 0.83307767, -21.911848, 2.7516584, -68.110664)
+unlock_condition = 3
+puzzle_signal_node = NodePath("../../SimonSays")
+
+[node name="AbstractDoor2" parent="Doorethys" instance=ExtResource("10_g8eim")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.06609154, 2.6411986, -68.110664)
+auto_chain_dialog_id = "DoorethyL4_Game9"
+unlock_condition = 3
+puzzle_signal_node = NodePath("../../SimonSays")
+
+[node name="AbstractDoor3" parent="Doorethys" instance=ExtResource("10_g8eim")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.48098493, 1.4660089, -19.513603)
+auto_chain_dialog_id = "DoorethyL4_game7"
+
+[node name="AbstractDoor4" parent="Doorethys" instance=ExtResource("10_g8eim")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.31733012, 1.4660089, -99.41392)
+auto_chain_dialog_id = "DoorethyL4_DoorAgain"
+
+[node name="NextZone" type="Area3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.024301529, 2.0415678, -102.27973)
+disable_mode = 2
+script = ExtResource("17_w8irg")
+good_scene = ExtResource("30_x12d3")
+bad_scene = ExtResource("18_k5e6m")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="NextZone"]
+transform = Transform3D(1, 0, 0, 0, -0.7986355, 0.6018151, 0, -0.6018151, -0.7986355, 0.33370256, 1.7161062, -0.41686058)
+light_color = Color(0.9137255, 0, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 1.906
+light_volumetric_fog_energy = 3.935
+spot_range = 5.1070023
+spot_angle = 65.67086
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24035645, 0.6329956, 0.29892159)
+shape = SubResource("BoxShape3D_k5e6m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eh8f3")
@@ -300,8 +344,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eh8f3")
 
 [node name="Area3D" type="Area3D" parent="SimonSays/RedOrgan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.567, 5, -1.555)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimonSays/RedOrgan/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_fjlvv")
 
 [node name="BlueOrgan" type="Node3D" parent="SimonSays"]
@@ -320,6 +367,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fjlvv")
 
 [node name="Area3D" type="Area3D" parent="SimonSays/BlueOrgan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.296, 5, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimonSays/BlueOrgan/Area3D"]
 shape = SubResource("SphereShape3D_fjlvv")
@@ -339,6 +388,8 @@ mesh = SubResource("SphereMesh_e127x")
 surface_material_override/0 = SubResource("StandardMaterial3D_heu5o")
 
 [node name="Area3D" type="Area3D" parent="SimonSays/GreenOrgan"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimonSays/GreenOrgan/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
@@ -359,10 +410,13 @@ mesh = SubResource("SphereMesh_4vryo")
 surface_material_override/0 = SubResource("StandardMaterial3D_g1ckg")
 
 [node name="Area3D" type="Area3D" parent="SimonSays/YellowOrgan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0862904, 4.677, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimonSays/YellowOrgan/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
-shape = SubResource("SphereShape3D_fjlvv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11170387, 0.3062625, 0)
+shape = SubResource("SphereShape3D_1x4kh")
 
 [node name="FuseBox" parent="SimonSays" instance=ExtResource("4_reskh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.7903652, -0.24272394, 24.436451)
@@ -372,7 +426,7 @@ max_health = 10
 [node name="TriggerZone" type="Area3D" parent="SimonSays"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimonSays/TriggerZone"]
-transform = Transform3D(0.6832355, 0, -0.7301981, 0, 1, 0, 0.7301981, 0, 0.6832355, -1.5201092, -2.2881174, -3.0862198)
+transform = Transform3D(0.6832355, 0, -0.7301981, 0, 1, 0, 0.7301981, 0, 0.6832355, -1.4471283, -2.2881174, -3.1545029)
 shape = SubResource("BoxShape3D_g3f77")
 
 [node name="DialogSystem" parent="SimonSays" instance=ExtResource("5_v7du0")]
@@ -444,27 +498,6 @@ shape = ExtResource("15_w8irg")
 [node name="Trash" type="MeshInstance3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("ArrayMesh_60s12")
-
-[node name="Doorethy" type="Node3D" parent="."]
-
-[node name="AbstractDoor" parent="Doorethy" instance=ExtResource("10_g8eim")]
-transform = Transform3D(0.83307767, 0, 0.86370236, 0, 1.2000002, 0, -0.86370236, 0, 0.83307767, -21.911848, 2.7516584, -68.110664)
-unlock_condition = 3
-puzzle_signal_node = NodePath("../../SimonSays")
-
-[node name="AbstractDoor2" parent="Doorethy" instance=ExtResource("10_g8eim")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.06609154, 2.6411986, -68.110664)
-auto_chain_dialog_id = "DoorethyL4_Game9"
-unlock_condition = 3
-puzzle_signal_node = NodePath("../../SimonSays")
-
-[node name="AbstractDoor3" parent="Doorethy" instance=ExtResource("10_g8eim")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.48098493, 1.4660089, -19.513603)
-auto_chain_dialog_id = "DoorethyL4_game7"
-
-[node name="AbstractDoor4" parent="Doorethy" instance=ExtResource("10_g8eim")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.31733012, 1.4660089, -99.41392)
-auto_chain_dialog_id = "DoorethyL4_DoorAgain"
 
 [node name="Designs" type="Node3D" parent="."]
 
@@ -1082,25 +1115,6 @@ light_color = Color(0, 1, 0, 1)
 light_energy = 5.0
 omni_range = 7.765505
 
-[node name="NextZone" type="Area3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.024301529, 2.0415678, -102.27973)
-disable_mode = 2
-script = ExtResource("17_w8irg")
-bad_scene = ExtResource("18_k5e6m")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="NextZone"]
-transform = Transform3D(1, 0, 0, 0, -0.7986355, 0.6018151, 0, -0.6018151, -0.7986355, 0.33370256, 1.7161062, -0.41686058)
-light_color = Color(0.9137255, 0, 0, 1)
-light_energy = 16.0
-light_indirect_energy = 1.906
-light_volumetric_fog_energy = 3.935
-spot_range = 5.1070023
-spot_angle = 65.67086
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NextZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24035645, 0.6329956, 0.29892159)
-shape = SubResource("BoxShape3D_k5e6m")
-
 [node name="Shader" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Shader"]
@@ -1112,7 +1126,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
+[connection signal="input_event" from="SimonSays/RedOrgan/Area3D" to="SimonSays" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="SimonSays/RedOrgan/Area3D" to="SimonSays" method="_on_red_area_input_event"]
 [connection signal="input_event" from="SimonSays/BlueOrgan/Area3D" to="SimonSays" method="_on_blue_area_input_event"]
 [connection signal="input_event" from="SimonSays/GreenOrgan/Area3D" to="SimonSays" method="_on_green_area_input_event"]

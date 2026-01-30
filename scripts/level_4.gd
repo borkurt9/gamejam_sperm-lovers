@@ -44,7 +44,16 @@ func _ready():
 		trigger_zone.body_entered.connect(_on_trigger_zone_body_entered)
 		print("Trigger zone connected")
 	
+	for organ_name in organs.keys():
+		var organ_node = organs[organ_name]
+		var area = organ_node.get_node("Area3D")  # adjust if Area3D has different name
+		
+		if area and area is Area3D:
+			area.input_ray_pickable = true
+			print(organ_name.to_upper() + " Area → ray_pickable forced ON: ", area.input_ray_pickable)
+	
 	print("Simon Says initialized!")
+	
 
 func _on_trigger_zone_body_entered(body: Node3D) -> void:
 	if game_ended: return
@@ -79,16 +88,22 @@ func unglow_organ(color: String):
 	tween.tween_property(organ, "scale", Vector3(1.0, 1.0, 1.0), 0.15)
 
 # Connect these functions to each Area3D's input_event signal
-func _on_red_area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+func _on_red_area_input_event(camera, event, click_position, click_normal, shape_idx):
+	print("RED input_event FIRED at ", click_position)
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print("→ Valid left click on RED!")
 		check_input("red")
-func _on_blue_area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+func _on_blue_area_input_event(camera, event, click_position, click_normal, shape_idx):
+	print("BLUE input_event FIRED at ", click_position)
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print("→ Valid left click on RED!")
 		check_input("blue")
-func _on_green_area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
+func _on_green_area_input_event(camera, event, click_position, click_normal, shape_idx):
+	print("GREEN input_event FIRED at ", click_position)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		check_input("green")
-func _on_yellow_area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
+func _on_yellow_area_input_event(camera, event, click_position, click_normal, shape_idx):
+	print("YELLOW input_event FIRED at ", click_position)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		check_input("yellow")
 

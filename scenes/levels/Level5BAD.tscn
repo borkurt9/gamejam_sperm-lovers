@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://d27u7m6dpcs84"]
+[gd_scene load_steps=30 format=4 uid="uid://d27u7m6dpcs84"]
 
 [ext_resource type="Script" uid="uid://4kv8f8ejgwqn" path="res://addons/TileMapLayer3D/nodes/tilemap_layer_3d.gd" id="1_up30s"]
 [ext_resource type="Script" uid="uid://bli432i5uj51v" path="res://addons/TileMapLayer3D/core/tile_creation_placement/tilemap_layer_settings.gd" id="2_4wqtj"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="14_ko2it"]
 [ext_resource type="PackedScene" uid="uid://c6sr2w4xbnhs6" path="res://scenes/dialog_system.tscn" id="14_x484u"]
 [ext_resource type="Script" uid="uid://c2vv85mquw12b" path="res://scripts/secret_ending.gd" id="15_hgcut"]
+[ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="16_6nqgy"]
 
 [sub_resource type="Environment" id="Environment_1homy"]
 background_mode = 1
@@ -116,6 +117,11 @@ emission_energy_multiplier = 16.0
 material = SubResource("StandardMaterial3D_hgcut")
 radial_segments = 6
 rings = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdteb"]
+shader = ExtResource("16_6nqgy")
+shader_parameter/viewport_size = Vector2(640, 480)
+shader_parameter/virtual_res = Vector2(320, 240)
 
 [node name="LastLevelBad" type="Node3D"]
 
@@ -369,3 +375,16 @@ light_color = Color(0.4080818, 3.4231513, 0, 1)
 light_energy = 16.0
 spot_range = 24.583467
 spot_angle = 38.735863
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Shader"]
+light_mask = 0
+visibility_layer = 2
+material = SubResource("ShaderMaterial_cdteb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

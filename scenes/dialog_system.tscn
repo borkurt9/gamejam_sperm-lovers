@@ -75,6 +75,7 @@ offset_right = 319.0
 offset_bottom = 80.17999
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_30pih")
 jsonsrc = "res://art/dialogSystem/dialog_content.json"
 metadata/_edit_use_anchors_ = true

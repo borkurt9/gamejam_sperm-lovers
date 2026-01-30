@@ -121,4 +121,4 @@ func _trigger_glitch() -> void:
 
 func _finish_prologue() -> void:
 	prologue_finished.emit()
-	get_tree().change_scene_to_file("res://scenes/levels/test_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/Level0.tscn")

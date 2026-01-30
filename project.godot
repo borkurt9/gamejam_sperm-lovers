@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sperm-lovers"
-run/main_scene="uid://bk8ck7wny4itr"
+run/main_scene="uid://dbqkjl4upgg6o"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

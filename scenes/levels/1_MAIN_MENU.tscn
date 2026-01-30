@@ -1,27 +1,27 @@
-[gd_scene load_steps=41 format=4 uid="uid://c2q5m6a5whflk"]
+[gd_scene load_steps=41 format=4 uid="uid://dbqkjl4upgg6o"]
 
-[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_hn6ym"]
-[ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="2_0shff"]
-[ext_resource type="Script" uid="uid://c2vv85mquw12b" path="res://scripts/secret_ending.gd" id="3_4kkmb"]
-[ext_resource type="PackedScene" uid="uid://c6sr2w4xbnhs6" path="res://scenes/dialog_system.tscn" id="4_18c2t"]
-[ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="5_qxq62"]
-[ext_resource type="PackedScene" uid="uid://c1ik22b8i70y5" path="res://scenes/levels/Level1.tscn" id="6_hiunu"]
-[ext_resource type="ArrayMesh" uid="uid://01m0thjjn0o2" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Toilet.res" id="7_l2wnw"]
-[ext_resource type="ArrayMesh" uid="uid://dynslslr0752x" path="res://art/glbtf/designsGlb/3dmeshes/FAB_TrashBin.res" id="8_qn26o"]
-[ext_resource type="ArrayMesh" uid="uid://562tpx065r02" path="res://art/glbtf/designsGlb/3dmeshes/FAB_TrashOut.res" id="9_2yanp"]
-[ext_resource type="ArrayMesh" uid="uid://bnr1yo3a65q4n" path="res://art/glbtf/designsGlb/3dmeshes/FAB_GarageDoor.res" id="10_0faug"]
-[ext_resource type="ArrayMesh" uid="uid://b11gld1jjcw3y" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Lamp.res" id="11_a88ry"]
-[ext_resource type="ArrayMesh" uid="uid://crt2ri0w1obep" path="res://art/glbtf/designsGlb/3dmeshes/FAB _floorSign.res" id="12_rg4wj"]
-[ext_resource type="ArrayMesh" uid="uid://b5ttlbna42lla" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Welcome.res" id="13_3h6cc"]
-[ext_resource type="ArrayMesh" uid="uid://c642jqt64ckbf" path="res://art/glbtf/designsGlb/3dmeshes/FAB_table.res" id="14_c4sa2"]
-[ext_resource type="Texture2D" uid="uid://c0xigj7fpr2oc" path="res://art/textures/tileset.png" id="15_w0hia"]
-[ext_resource type="Script" uid="uid://c2lxt2vjdjb4b" path="res://addons/TileMapLayer3D/nodes/static_collision_body.gd" id="16_5r1dw"]
-[ext_resource type="Shape3D" uid="uid://mv5wqumg3vdt" path="res://scenes/levels/test_level_CollisionData/test_level_TileMapLayer3D_collision.res" id="17_c1hwq"]
-[ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="19_8nqo0"]
-[ext_resource type="Script" path="res://scenes/menu.gd" id="20_c6huh"]
-[ext_resource type="PackedScene" uid="uid://bj7gawixh3dxo" path="res://scenes/enemies/white_blood_cell.tscn" id="20_rse5p"]
-[ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="21_nhsuv"]
-[ext_resource type="Texture2D" uid="uid://c7gj1bbpdgyyg" path="res://art/title.png" id="22_gr43c"]
+[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_hkmf2"]
+[ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="2_wxx0q"]
+[ext_resource type="Script" uid="uid://c2vv85mquw12b" path="res://scripts/secret_ending.gd" id="3_xqjht"]
+[ext_resource type="PackedScene" uid="uid://c6sr2w4xbnhs6" path="res://scenes/dialog_system.tscn" id="4_cdrvo"]
+[ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="5_hxsqb"]
+[ext_resource type="PackedScene" uid="uid://c1ik22b8i70y5" path="res://scenes/levels/Level1.tscn" id="6_jcfob"]
+[ext_resource type="ArrayMesh" uid="uid://01m0thjjn0o2" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Toilet.res" id="7_vxb6l"]
+[ext_resource type="ArrayMesh" uid="uid://dynslslr0752x" path="res://art/glbtf/designsGlb/3dmeshes/FAB_TrashBin.res" id="8_6rcqv"]
+[ext_resource type="ArrayMesh" uid="uid://562tpx065r02" path="res://art/glbtf/designsGlb/3dmeshes/FAB_TrashOut.res" id="9_2l3e3"]
+[ext_resource type="ArrayMesh" uid="uid://bnr1yo3a65q4n" path="res://art/glbtf/designsGlb/3dmeshes/FAB_GarageDoor.res" id="10_vfn06"]
+[ext_resource type="ArrayMesh" uid="uid://b11gld1jjcw3y" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Lamp.res" id="11_nsdpv"]
+[ext_resource type="ArrayMesh" uid="uid://crt2ri0w1obep" path="res://art/glbtf/designsGlb/3dmeshes/FAB _floorSign.res" id="12_uyept"]
+[ext_resource type="ArrayMesh" uid="uid://b5ttlbna42lla" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Welcome.res" id="13_1e43i"]
+[ext_resource type="ArrayMesh" uid="uid://c642jqt64ckbf" path="res://art/glbtf/designsGlb/3dmeshes/FAB_table.res" id="14_b1a8q"]
+[ext_resource type="Texture2D" uid="uid://c0xigj7fpr2oc" path="res://art/textures/tileset.png" id="15_stjnx"]
+[ext_resource type="Script" uid="uid://c2lxt2vjdjb4b" path="res://addons/TileMapLayer3D/nodes/static_collision_body.gd" id="16_3h05q"]
+[ext_resource type="Shape3D" uid="uid://mv5wqumg3vdt" path="res://scenes/levels/test_level_CollisionData/test_level_TileMapLayer3D_collision.res" id="17_wlsya"]
+[ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="18_j6k0h"]
+[ext_resource type="PackedScene" uid="uid://bj7gawixh3dxo" path="res://scenes/enemies/white_blood_cell.tscn" id="19_2foc7"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="20_c6pds"]
+[ext_resource type="Texture2D" uid="uid://c7gj1bbpdgyyg" path="res://art/title.png" id="21_jnp8w"]
+[ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="22_e3vie"]
 
 [sub_resource type="Environment" id="Environment_hfwtw"]
 background_mode = 1
@@ -69,7 +69,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 diffuse_mode = 3
 specular_mode = 1
-albedo_texture = ExtResource("15_w0hia")
+albedo_texture = ExtResource("15_stjnx")
 texture_filter = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qgrpf"]
@@ -93,7 +93,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 diffuse_mode = 3
 specular_mode = 1
-albedo_texture = ExtResource("15_w0hia")
+albedo_texture = ExtResource("15_stjnx")
 texture_filter = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_os2yb"]
@@ -117,7 +117,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 diffuse_mode = 3
 specular_mode = 1
-albedo_texture = ExtResource("15_w0hia")
+albedo_texture = ExtResource("15_stjnx")
 texture_filter = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jmx14"]
@@ -145,12 +145,12 @@ corner_radius_bottom_left = 15
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gr43c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lxl1u"]
-shader = ExtResource("21_nhsuv")
+shader = ExtResource("22_e3vie")
 shader_parameter/viewport_size = Vector2(640, 480)
 shader_parameter/virtual_res = Vector2(320, 240)
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_hn6ym")
+script = ExtResource("1_hkmf2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hfwtw")
@@ -169,17 +169,17 @@ transform = Transform3D(0.02792158, -0.62499887, 0.78012615, 0, 0.78043044, 0.62
 keep_aspect = 0
 fov = 73.3
 
-[node name="AbstractDoor" parent="." instance=ExtResource("2_0shff")]
+[node name="AbstractDoor" parent="." instance=ExtResource("2_wxx0q")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.5911617, 1.474934, -16.7337)
 auto_chain_dialog_id = "DoorethyL0"
 
 [node name="SecretZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7255995, 1.4062264, 6.462715)
 disable_mode = 2
-script = ExtResource("3_4kkmb")
+script = ExtResource("3_xqjht")
 dialogue_canvas_path = NodePath("DialogSystem")
 
-[node name="DialogSystem" parent="SecretZone" instance=ExtResource("4_18c2t")]
+[node name="DialogSystem" parent="SecretZone" instance=ExtResource("4_cdrvo")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="SecretZone"]
 transform = Transform3D(1, 0, 0, 0, 0.3665012, 0.9304176, 0, -0.9304176, 0.3665012, 0.33370256, 6.0119905, 2.0544615)
@@ -197,8 +197,8 @@ shape = SubResource("BoxShape3D_hfwtw")
 [node name="NextZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28081203, 1.4062264, -19.370373)
 disable_mode = 2
-script = ExtResource("5_qxq62")
-next_scene = ExtResource("6_hiunu")
+script = ExtResource("5_hxsqb")
+next_scene = ExtResource("6_jcfob")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="NextZone"]
 transform = Transform3D(1, 0, 0, 0, -0.7986355, 0.6018151, 0, -0.6018151, -0.7986355, 0.33370256, 1.7161062, -0.41686058)
@@ -219,7 +219,7 @@ shape = SubResource("BoxShape3D_hfwtw")
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 5.297, 0.664, -7)
 
 [node name="FabConvertedSmToiletWc0" type="MeshInstance3D" parent="designs/toilet"]
-mesh = ExtResource("7_l2wnw")
+mesh = ExtResource("7_vxb6l")
 skeleton = NodePath("../../..")
 
 [node name="toieltmesh" type="CollisionShape3D" parent="designs/toilet"]
@@ -230,7 +230,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, 1, -
 
 [node name="FabConvertedSmTrashBinOutside0" type="MeshInstance3D" parent="designs/bin"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 1.0587912e-21, 0, 1.0587912e-21, 1.5, 0.036050797, 1.3165166, -2.3841858e-07)
-mesh = ExtResource("8_qn26o")
+mesh = ExtResource("8_6rcqv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/bin"]
@@ -241,7 +241,7 @@ shape = SubResource("ConvexPolygonShape3D_fqldq")
 transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, 1.5, 0, -1.5, -6.556708e-08, -1.542833, 0.75003695, -15.520492)
 
 [node name="FabTrashOut" type="MeshInstance3D" parent="designs/trash"]
-mesh = ExtResource("9_2yanp")
+mesh = ExtResource("9_2l3e3")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/trash"]
@@ -252,7 +252,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.0
 
 [node name="FabGarageDoor" type="MeshInstance3D" parent="designs/GarageDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.07662511)
-mesh = ExtResource("10_0faug")
+mesh = ExtResource("10_vfn06")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/GarageDoor"]
@@ -263,7 +263,7 @@ shape = SubResource("ConvexPolygonShape3D_hppjq")
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -2.0871754, 2.8821714, -12.351471)
 
 [node name="FabLamp" type="MeshInstance3D" parent="designs/Lamp"]
-mesh = ExtResource("11_a88ry")
+mesh = ExtResource("11_nsdpv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/Lamp"]
@@ -282,7 +282,7 @@ spot_angle = 41.220493
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -2.0773964, 2.8821714, -2.773199)
 
 [node name="FabLamp" type="MeshInstance3D" parent="designs/Lamp2"]
-mesh = ExtResource("11_a88ry")
+mesh = ExtResource("11_nsdpv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/Lamp2"]
@@ -301,7 +301,7 @@ spot_angle = 41.220493
 transform = Transform3D(2.1976643, 2.0421243, 8.9264084e-08, 0, -1.3113416e-07, 3, 2.0421243, -2.1976643, -9.606296e-08, -3.2964249, 1.3256316, -6.3000293)
 
 [node name="FabConvertedSmFloorSignWc0" type="MeshInstance3D" parent="designs/floorSign"]
-mesh = ExtResource("12_rg4wj")
+mesh = ExtResource("12_uyept")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/floorSign"]
@@ -309,14 +309,14 @@ shape = SubResource("ConvexPolygonShape3D_v6k17")
 
 [node name="WelcomeSign" type="MeshInstance3D" parent="designs"]
 transform = Transform3D(9.553427e-15, 2.1855695e-07, 5, 5, -2.1855695e-07, 0, 2.1855695e-07, 5, -2.1855695e-07, -4.8873334, 2.414208, -0.8620461)
-mesh = ExtResource("13_3h6cc")
+mesh = ExtResource("13_1e43i")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="designs"]
 transform = Transform3D(1.1, 0, 0, 0, 0.5660646, 0.94317067, 0, -0.94317067, 0.5660646, 3.4166446, 1.1804905, -14.951786)
 
 [node name="FabConvertedSmTablesRestaurant0" type="MeshInstance3D" parent="designs/StaticBody3D"]
-mesh = ExtResource("14_c4sa2")
+mesh = ExtResource("14_b1a8q")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="designs/StaticBody3D"]
@@ -339,22 +339,22 @@ skeleton = NodePath("../..")
 
 [node name="_StaticBody3D_37038" type="StaticBody3D" parent="tilemap/Level0"]
 visible = false
-script = ExtResource("16_5r1dw")
+script = ExtResource("16_3h05q")
 
 [node name="@CollisionShape3D@37037" type="CollisionShape3D" parent="tilemap/Level0/_StaticBody3D_37038"]
-shape = ExtResource("17_c1hwq")
+shape = ExtResource("17_wlsya")
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="SiblingSperm" parent="Enemies" instance=ExtResource("19_8nqo0")]
+[node name="SiblingSperm" parent="Enemies" instance=ExtResource("18_j6k0h")]
 transform = Transform3D(0.21919915, 0, 0.9756801, 0, 1, 0, -0.9756801, 0, 0.21919915, -0.931833, 1.1259284, -2.6801736)
 static_mode = true
 
-[node name="SiblingSperm2" parent="Enemies" instance=ExtResource("19_8nqo0")]
+[node name="SiblingSperm2" parent="Enemies" instance=ExtResource("18_j6k0h")]
 transform = Transform3D(-0.019877879, 0, 0.9998024, 0, 1, 0, -0.9998024, 0, -0.019877879, 0.14155018, 0.8715956, -2.6100159)
 static_mode = true
 
-[node name="WhiteBloodCell" parent="Enemies" instance=ExtResource("20_rse5p")]
+[node name="WhiteBloodCell" parent="Enemies" instance=ExtResource("19_2foc7")]
 transform = Transform3D(-0.09249227, 0, -0.9957134, 0, 1, 0, 0.9957134, 0, -0.09249227, -0.09750569, 1.1535463, -5.619664)
 static_mode = true
 chase_speed = 2.0
@@ -375,7 +375,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 alignment = 1
-script = ExtResource("20_c6huh")
+script = ExtResource("20_c6pds")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -403,7 +403,7 @@ layer = 0
 [node name="Title" type="Sprite2D" parent="UILayer"]
 position = Vector2(170, -81)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("22_gr43c")
+texture = ExtResource("21_jnp8w")
 centered = false
 
 [node name="Shader" type="CanvasLayer" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=4 uid="uid://ckxupilx0417l"]
+[gd_scene load_steps=58 format=4 uid="uid://ckxupilx0417l"]
 
 [ext_resource type="PackedScene" uid="uid://qxin0n6vbcb7" path="res://scenes/player/player.tscn" id="2_vpmgw"]
 [ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="3_crse0"]
+[ext_resource type="PackedScene" uid="uid://ygqoffjseh23" path="res://scenes/levels/Level4.tscn" id="4_f30i7"]
 [ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="4_uw6dx"]
 [ext_resource type="Script" uid="uid://c2xaendkngky8" path="res://scripts/camera_follow.gd" id="5_kak5d"]
 [ext_resource type="Script" uid="uid://c2lxt2vjdjb4b" path="res://addons/TileMapLayer3D/nodes/static_collision_body.gd" id="6_ga15p"]
@@ -30,6 +31,9 @@
 [ext_resource type="Script" uid="uid://u71kt1jo3345" path="res://scripts/pressureplate.gd" id="45_wlmkh"]
 [ext_resource type="Script" uid="uid://d21jveh7vyjys" path="res://scripts/acid.gd" id="47_30go5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6julk"]
+size = Vector3(2.9841309, 3.7069092, 2.3623924)
+
 [sub_resource type="Environment" id="Environment_m71o3"]
 background_mode = 1
 background_color = Color(0.27298582, 1.2634322e-07, 4.813075e-08, 1)
@@ -44,9 +48,6 @@ volumetric_fog_albedo = Color(0, 0, 0, 1)
 volumetric_fog_emission = Color(0.21960784, 0, 0, 1)
 volumetric_fog_sky_affect = 0.0
 adjustment_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6julk"]
-size = Vector3(2.9841309, 3.7069092, 2.3623924)
 
 [sub_resource type="Resource" id="Resource_f5ynd"]
 script = ExtResource("11_2slow")
@@ -207,6 +208,39 @@ shader_parameter/virtual_res = Vector2(320, 240)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Doorethys" type="Node3D" parent="."]
+
+[node name="AbstractDoor" parent="Doorethys" instance=ExtResource("3_crse0")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 19.587477, 1.867454, 48.655598)
+auto_chain_dialog_id = "DoorethyL3_0"
+
+[node name="AbstractDoor2" parent="Doorethys" instance=ExtResource("3_crse0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.987204, 1.867454, 19.125881)
+auto_chain_dialog_id = "DoorethyL3_1"
+
+[node name="AbstractDoor3" parent="Doorethys" instance=ExtResource("3_crse0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 21.467194, 1.867454, -47.54226)
+auto_chain_dialog_id = "DoorethyL3_2"
+
+[node name="NextZone" type="Area3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.668495, 1.7077761, -52.82745)
+disable_mode = 2
+script = ExtResource("4_uw6dx")
+next_scene = ExtResource("4_f30i7")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="NextZone"]
+transform = Transform3D(1, 0, 0, 0, -0.7986355, 0.6018151, 0, -0.6018151, -0.7986355, 0.33370256, 1.7161062, -0.41686058)
+light_color = Color(0.9137255, 0, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 1.906
+light_volumetric_fog_energy = 3.935
+spot_range = 5.1070023
+spot_angle = 65.67086
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24035645, 0.6329956, 0.29892159)
+shape = SubResource("BoxShape3D_6julk")
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_vpmgw")]
 transform = Transform3D(-0.9998424, 0, 0.017749034, 0, 1, 0, -0.017749034, 0, -0.9998424, 22.767708, 1, 88.922806)
 move_speed = 8.0
@@ -227,24 +261,6 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, -2.9802322e-07, 0, 3.2782555e-07
 light_color = Color(0.9647059, 0.9411765, 0.30588236, 1)
 light_energy = 3.0
 omni_range = 7.206023
-
-[node name="NextZone" type="Area3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.668495, 1.7077761, -52.82745)
-disable_mode = 2
-script = ExtResource("4_uw6dx")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="NextZone"]
-transform = Transform3D(1, 0, 0, 0, -0.7986355, 0.6018151, 0, -0.6018151, -0.7986355, 0.33370256, 1.7161062, -0.41686058)
-light_color = Color(0.9137255, 0, 0, 1)
-light_energy = 16.0
-light_indirect_energy = 1.906
-light_volumetric_fog_energy = 3.935
-spot_range = 5.1070023
-spot_angle = 65.67086
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NextZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24035645, 0.6329956, 0.29892159)
-shape = SubResource("BoxShape3D_6julk")
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -1280,20 +1296,6 @@ transform = Transform3D(1.349317, 0.51741356, 0.40202865, 0.45274034, -0.0708879
 visible = false
 shape = SubResource("ConvexPolygonShape3D_wspkb")
 
-[node name="Doorethys" type="Node3D" parent="."]
-
-[node name="AbstractDoor" parent="Doorethys" instance=ExtResource("3_crse0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 19.587477, 1.867454, 48.655598)
-auto_chain_dialog_id = "DoorethyL3_0"
-
-[node name="AbstractDoor2" parent="Doorethys" instance=ExtResource("3_crse0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.987204, 1.867454, 19.125881)
-auto_chain_dialog_id = "DoorethyL3_1"
-
-[node name="AbstractDoor3" parent="Doorethys" instance=ExtResource("3_crse0")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 21.467194, 1.867454, -47.54226)
-auto_chain_dialog_id = "DoorethyL3_2"
-
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="AcidLight" type="OmniLight3D" parent="Lights"]
@@ -2018,6 +2020,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="power_changed" from="Puzzle3/Door0/pressureplate" to="Puzzle3/Door0/electricdoor0" method="set_power"]
 [connection signal="power_changed" from="Puzzle3/Door1/pressureplate" to="Puzzle3/Door1/electricdoor1" method="set_power"]

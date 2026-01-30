@@ -29,7 +29,7 @@
 [ext_resource type="Material" uid="uid://c0dvc886h8ojp" path="res://art/glbtf/entitiesMaterials/spermEnemy/Material.002.tres" id="27_lsfhh"]
 [ext_resource type="Material" uid="uid://cikkfkwasyyab" path="res://art/glbtf/entitiesMaterials/whiteCell/Material.001.tres" id="28_ukiex"]
 [ext_resource type="Script" uid="uid://87hlxmip7tbm" path="res://scripts/next_zone_LEVEL4.gd" id="29_xssc6"]
-[ext_resource type="PackedScene" uid="uid://d27u7m6dpcs84" path="res://scenes/levels/Level5BAD.tscn" id="30_gpful"]
+[ext_resource type="PackedScene" uid="uid://d27u7m6dpcs84" path="res://scenes/levels/0_Level5COPY.tscn" id="30_gpful"]
 
 [sub_resource type="Environment" id="Environment_eh8f3"]
 background_mode = 1
