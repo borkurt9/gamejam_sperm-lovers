@@ -39,10 +39,20 @@ func _on_valve_completed(valve: Node) -> void:
 	completed_valves += 1
 	print("[Level2Puzzle] Valve completed! ", completed_valves, "/", total_valves)
 
+	# Karma reward for completing valve (+15 each)
+	if GameManager:
+		GameManager.add_karma_xp(15.0)
+		print("[Level2Puzzle] +15 karma for valve completion")
+
 	if completed_valves >= total_valves:
 		all_complete = true
 		all_valves_completed.emit()
 		print("[Level2Puzzle] ALL VALVES COMPLETE - Button now usable!")
+
+		# Bonus karma for completing all valves (pacifist route)
+		if GameManager:
+			GameManager.add_karma_xp(35.0)
+			print("[Level2Puzzle] +35 karma BONUS: All valves complete!")
 
 func _on_valve_started(valve: Node) -> void:
 	active_valve = valve

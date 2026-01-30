@@ -450,20 +450,24 @@ func take_damage(amount: int) -> bool:
 func die() -> void:
 	if is_dead: return
 	is_dead = true
-	
+
 	print("Sibling died!")
 	died.emit()
-	
+
+	# Karma penalty for killing sibling sperm
+	if GameManager:
+		GameManager.add_karma_xp(-20.0)
+		print("[Sperm] -20 karma for sibling death")
+
 	var splash = DeathSplash.instantiate()
-	# Add your color setup here if needed
 	get_tree().current_scene.add_child(splash)
 	splash.global_position = global_position
-	
+
 	# Wake nearby enemies
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if enemy != self and enemy.has_method("_on_nearby_violence"):
 			enemy._on_nearby_violence(global_position)
-	
+
 	queue_free()
 
 # Player interaction / dialog
