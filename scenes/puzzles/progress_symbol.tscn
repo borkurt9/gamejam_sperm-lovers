@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvxq8k2m4e6wn"]
+
+[ext_resource type="Script" uid="uid://d30e6rtfxhcyj" path="res://scripts/progress_symbol.gd" id="1_symbol"]
+
+[node name="ProgressSymbol" type="Node3D"]
+script = ExtResource("1_symbol")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+pixel_size = 0.02
+modulate = Color(1, 0.3, 0.3, 1)
+text = "?"
+font_size = 64
+billboard = 1

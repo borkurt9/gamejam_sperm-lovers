@@ -4,11 +4,11 @@ extends Area3D
 @export var dialogue_canvas_path: NodePath
 
 ## Path to the ending video scene
-@export_file("*.tscn") var ending_video_scene: String = "res://scenes/ui/ending_video_player.tscn"
+@export_file("*.tscn") var ending_video_scene: String = "res://scenes/ui/good_ending_video_player.tscn"
 
-# First interaction: auto-chain dialogue (array or classic key)
+# First interaction: auto-chain dialogue
 @export_group("Auto-Chain Dialogue")
-@export var auto_chain_start_id: String = "SecretZone"  # ← changed to array name if you renamed it
+@export var auto_chain_start_id: String = "GoodEnding_Egg"
 
 var first_interaction_done = false
 var checkPlayer = false
@@ -23,7 +23,7 @@ func _ready():
 	if dialogue_canvas_path:
 		var canvas_layer = get_node(dialogue_canvas_path)
 		if canvas_layer:
-			dialogue_canvas = canvas_layer.get_node("ControlNode")  # or whatever your Control node is named
+			dialogue_canvas = canvas_layer.get_node("ControlNode")
 			if not dialogue_canvas:
 				push_warning("Control node not found in DialogueCanvas!")
 		else: push_warning("DialogueCanvas not found at path: " + str(dialogue_canvas_path))
@@ -62,10 +62,10 @@ func interact():
 
 
 func _on_auto_chain_finished():
-	print("Auto-chain dialogue finished")
+	print("Good ending dialogue finished")
 	just_closed_dialogue = true
 
-	# Transition to the ending video
+	# Transition to the good ending video
 	if ending_video_scene != "":
-		print("Playing ending video...")
+		print("Playing good ending video...")
 		get_tree().change_scene_to_file(ending_video_scene)
