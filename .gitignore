@@ -2,6 +2,11 @@
 .godot/
 /android/
 
+# Builds - too large for GitHub
+builds/
+*.exe
+*.zip
+
 # someshi
 CLAUDE.md
 GEMINI.md\
