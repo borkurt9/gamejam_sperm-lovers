@@ -1,11 +1,11 @@
 [gd_scene load_steps=41 format=4 uid="uid://dbqkjl4upgg6o"]
 
-[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_hkmf2"]
+[ext_resource type="Script" uid="uid://dkuvi1x76n4nj" path="res://scripts/mainmenu.gd" id="1_hkmf2"]
 [ext_resource type="PackedScene" uid="uid://ciluydixohjfm" path="res://scenes/abstract_door.tscn" id="2_wxx0q"]
 [ext_resource type="Script" uid="uid://c2vv85mquw12b" path="res://scripts/secret_ending.gd" id="3_xqjht"]
 [ext_resource type="PackedScene" uid="uid://c6sr2w4xbnhs6" path="res://scenes/dialog_system.tscn" id="4_cdrvo"]
 [ext_resource type="Script" uid="uid://cofp6hemc4wv8" path="res://scripts/next_zone_enabler.gd" id="5_hxsqb"]
-[ext_resource type="PackedScene" uid="uid://c1ik22b8i70y5" path="res://scenes/levels/Level1.tscn" id="6_jcfob"]
+[ext_resource type="PackedScene" uid="uid://c1ik22b8i70y5" path="res://scenes/levels/level1.tscn" id="6_jcfob"]
 [ext_resource type="ArrayMesh" uid="uid://01m0thjjn0o2" path="res://art/glbtf/designsGlb/3dmeshes/FAB_Toilet.res" id="7_vxb6l"]
 [ext_resource type="ArrayMesh" uid="uid://dynslslr0752x" path="res://art/glbtf/designsGlb/3dmeshes/FAB_TrashBin.res" id="8_6rcqv"]
 [ext_resource type="ArrayMesh" uid="uid://562tpx065r02" path="res://art/glbtf/designsGlb/3dmeshes/FAB_TrashOut.res" id="9_2l3e3"]
@@ -19,7 +19,7 @@
 [ext_resource type="Shape3D" uid="uid://mv5wqumg3vdt" path="res://scenes/levels/test_level_CollisionData/test_level_TileMapLayer3D_collision.res" id="17_wlsya"]
 [ext_resource type="PackedScene" uid="uid://hy4mbrybw7mr" path="res://scenes/enemies/sibling_sperm.tscn" id="18_j6k0h"]
 [ext_resource type="PackedScene" uid="uid://bj7gawixh3dxo" path="res://scenes/enemies/white_blood_cell.tscn" id="19_2foc7"]
-[ext_resource type="Script" path="res://scenes/menu.gd" id="20_c6pds"]
+[ext_resource type="Script" uid="uid://bnbe7wcvn1dcg" path="res://scenes/menu.gd" id="20_c6pds"]
 [ext_resource type="Texture2D" uid="uid://c7gj1bbpdgyyg" path="res://art/title.png" id="21_jnp8w"]
 [ext_resource type="Shader" uid="uid://dl51w1qcx1676" path="res://art/PSX_shader.gdshader" id="22_e3vie"]
 
@@ -401,10 +401,10 @@ text = "Q U I T"
 layer = 0
 
 [node name="Title" type="Sprite2D" parent="UILayer"]
-position = Vector2(170, -81)
+position = Vector2(380, 80)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("21_jnp8w")
-centered = false
+centered = true
 
 [node name="Shader" type="CanvasLayer" parent="."]
 
